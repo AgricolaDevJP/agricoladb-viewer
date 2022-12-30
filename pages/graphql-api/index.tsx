@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { Button, Container } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import Headline1 from '../../components/common/Headline/Headline1'
 import Headline2 from '../../components/common/Headline/Headline2'
 
