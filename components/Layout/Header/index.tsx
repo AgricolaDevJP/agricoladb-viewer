@@ -12,6 +12,9 @@ const HeaderNav: FC = () => {
       <Link href="/" legacyBehavior passHref>
         <Nav.Link eventKey="/">Home</Nav.Link>
       </Link>
+      <Link href="/translation-rule" legacyBehavior passHref>
+        <Nav.Link eventKey="/translation-rule">翻訳ルール</Nav.Link>
+      </Link>
       <Link href="/about" legacyBehavior passHref>
         <Nav.Link eventKey="/about">本サイトについて</Nav.Link>
       </Link>
