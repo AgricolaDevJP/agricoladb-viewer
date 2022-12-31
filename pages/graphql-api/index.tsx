@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap'
 import Headline1 from '../../components/common/Headline/Headline1'
 import Headline2 from '../../components/common/Headline/Headline2'
 
-const ApiDoc: NextPage = () => (
+const GraphqlApiPage: NextPage = () => (
   <>
     <Container>
       <Headline1>GraphQL API</Headline1>
@@ -57,4 +57,4 @@ const ApiDoc: NextPage = () => (
   </>
 )
 
-export default ApiDoc
+export default GraphqlApiPage

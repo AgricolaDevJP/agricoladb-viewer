@@ -3,7 +3,7 @@ import { Container, Tabs, Tab } from 'react-bootstrap'
 import Headline1 from '../../components/common/Headline/Headline1'
 import Headline2 from '../../components/common/Headline/Headline2'
 
-const TranslationRule: NextPage = () => {
+const TranslationRulePage: NextPage = () => {
   return (
     <>
       <Container>
@@ -145,4 +145,4 @@ const TranslationRule: NextPage = () => {
   )
 }
 
-export default TranslationRule
+export default TranslationRulePage

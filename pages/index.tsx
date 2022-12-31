@@ -5,7 +5,7 @@ import Headline2 from '../components/common/Headline/Headline2'
 import ChangeLogsList from '../components/pages/index/ChangeLogsList'
 import { changeLogs } from '../libs/changeLogs'
 
-const Index: NextPage = () => {
+const IndexPage: NextPage = () => {
   return (
     <>
       <Container>
@@ -30,4 +30,4 @@ const Index: NextPage = () => {
   )
 }
 
-export default Index
+export default IndexPage

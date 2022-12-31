@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap'
 import Headline1 from '../../components/common/Headline/Headline1'
 import Headline2 from '../../components/common/Headline/Headline2'
 
-const About: NextPage = () => (
+const AboutPage: NextPage = () => (
   <>
     <Container>
       <Headline1>本サイトについて</Headline1>
@@ -101,4 +101,4 @@ const About: NextPage = () => (
   </>
 )
 
-export default About
+export default AboutPage
