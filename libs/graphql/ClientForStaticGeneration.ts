@@ -1,7 +1,7 @@
 import type { GetCardsDetailByRevisionQuery } from './generated'
 import type { UnwrapArray } from '../utils/types'
 import { GraphQLClient } from 'graphql-request'
-import { nonNullableFilter } from '../utils/types'
+import { isNonNullable } from '../utils/types'
 import { getSdk } from './generated'
 
 const revisionIDs = ['1', '2'] as const
@@ -56,7 +56,7 @@ class ClientForStaticGeneration {
     const res = await this.sdk.GetCardsDetailByRevision({
       revisionID,
     })
-    const cards = res.cards?.edges?.map(e => e?.node).filter(nonNullableFilter) || []
+    const cards = res.cards?.edges?.map(e => e?.node).filter(isNonNullable) || []
     const cardLiteralIDs = cards.map(card => card.literalID)
     const cardsMap = cards.reduce((map, card) => {
       map[card.literalID] = card

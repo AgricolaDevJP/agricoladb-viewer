@@ -1,8 +1,9 @@
 import type { NextPage, GetStaticPaths, InferGetStaticPropsType, GetStaticPropsContext } from 'next'
-import { Fragment } from 'react'
 import { Container } from 'react-bootstrap'
 import Headline1 from '../../../components/common/Headline/Headline1'
 import Headline2 from '../../../components/common/Headline/Headline2'
+import CardDescriptionList from '../../../components/pages/card/CardDescriptionList'
+import CardMetaTable from '../../../components/pages/card/CardMetaTable'
 import { clientForStaticGeneration } from '../../../libs/graphql/ClientForStaticGeneration'
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -36,47 +37,18 @@ export const getStaticProps = async (context: GetStaticPropsContext<{ literalID:
   }
 }
 
-const Ag1CardPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ card }) => (
-  <>
-    <Container>
-      <Headline1>{card?.nameJa || card?.nameEn || 'NO NAME'}</Headline1>
-      <dl>
-        <dt>種類</dt>
-        <dd>{card?.cardType.nameJa}</dd>
-        {card?.prerequisite && (
-          <>
-            <dt>前提</dt>
-            <dd>{card.prerequisite}</dd>
-          </>
-        )}
-        {card?.cost && (
-          <>
-            <dt>コスト</dt>
-            <dd>{card.cost}</dd>
-          </>
-        )}
-        {card?.victoryPoint && (
-          <>
-            <dt>カード点</dt>
-            <dd>{card.victoryPoint}点</dd>
-          </>
-        )}
-        {card?.specialVictoryPoint && (
-          <>
-            <dt>カード点</dt>
-            <dd>{card.specialVictoryPoint}点</dd>
-          </>
-        )}
-        {card?.description && (
-          <>
-            <dt>テキスト</dt>
-            <dd>{card.description}</dd>
-          </>
-        )}
-      </dl>
-      <Headline2>メタ情報</Headline2>
-    </Container>
-  </>
-)
+const Ag1CardPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ card }) =>
+  card === undefined ? (
+    <></>
+  ) : (
+    <>
+      <Container>
+        <Headline1>{card.nameJa || card.nameEn || 'NO NAME'}</Headline1>
+        <CardDescriptionList card={card} />
+        <Headline2>メタ情報</Headline2>
+        <CardMetaTable card={card} />
+      </Container>
+    </>
+  )
 
 export default Ag1CardPage

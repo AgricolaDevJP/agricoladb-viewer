@@ -1,5 +1,5 @@
 import type { FC } from 'react'
-import type { ChangeLog } from '../../../libs/changeLogs'
+import type { ChangeLog } from '../../../../libs/changeLogs'
 import { ListGroup } from 'react-bootstrap'
 import { compareDesc, format } from 'date-fns'
 
