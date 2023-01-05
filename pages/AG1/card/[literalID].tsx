@@ -1,9 +1,10 @@
 import type { NextPage, GetStaticPaths, InferGetStaticPropsType, GetStaticPropsContext } from 'next'
 import { Container } from 'react-bootstrap'
-import Headline1 from '../../../components/common/Headline/Headline1'
 import Headline2 from '../../../components/common/Headline/Headline2'
 import CardDescriptionList from '../../../components/pages/card/CardDescriptionList'
+import CardLiteralIDBadge from '../../../components/pages/card/CardLiteralIDBadge'
 import CardMetaTable from '../../../components/pages/card/CardMetaTable'
+import CardTitle from '../../../components/pages/card/CardTitle'
 import { clientForStaticGeneration } from '../../../libs/graphql/ClientForStaticGeneration'
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -43,7 +44,9 @@ const Ag1CardPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   ) : (
     <>
       <Container>
-        <Headline1>{card.nameJa || card.nameEn || 'NO NAME'}</Headline1>
+        <CardTitle card={card}>
+          <CardLiteralIDBadge card={card} />
+        </CardTitle>
         <CardDescriptionList card={card} />
         <Headline2>メタ情報</Headline2>
         <CardMetaTable card={card} />
