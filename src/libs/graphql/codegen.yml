@@ -1,8 +1,8 @@
 overwrite: true
 schema: 'https://raw.githubusercontent.com/AgricolaDevJP/agricoladb-server/main/graph/ent.graphqls'
-documents: 'libs/graphql/documents/**/*.graphql'
+documents: 'src/libs/graphql/documents/**/*.graphql'
 generates:
-  libs/graphql/generated.ts:
+  src/libs/graphql/generated.ts:
     plugins:
       - typescript
       - typescript-operations
