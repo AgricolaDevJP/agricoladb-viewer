@@ -6,5 +6,8 @@ on:
       - main
 
 jobs:
+  test-node:
+    uses: ./.github/workflows/test-node.yml
+
   test-actions:
     uses: ./.github/workflows/test-actions.yml
