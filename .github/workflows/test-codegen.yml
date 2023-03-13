@@ -1,0 +1,18 @@
+name: test-codegen
+
+on:
+  workflow_call:
+
+jobs:
+  codegen-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: '.node-version'
+          cache: 'yarn'
+      - run: yarn install --frozen-lockfile
+      - run: yarn graphql-codegen
+      - run: git add -N .
+      - run: git diff --stat --exit-code
