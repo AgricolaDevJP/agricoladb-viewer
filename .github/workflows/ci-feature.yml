@@ -7,10 +7,19 @@ jobs:
   judge-execute:
     outputs:
       needs-test-node: 'true'
+      needs-test-codegen: ${{ steps.needs-test-codegen.outputs.any_changed }}
       needs-test-actions: ${{ steps.needs-test-actions.outputs.any_changed }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - id: needs-test-codegen
+        uses: tj-actions/changed-files@v35
+        with:
+          files: |
+            .github/workflows/test-codegen.yml
+            package.json
+            yarn.lock
+            src/libs/graphql/**
       - id: needs-test-actions
         uses: tj-actions/changed-files@v35
         with:
@@ -22,6 +31,11 @@ jobs:
     needs: judge-execute
     if: needs.judge-execute.outputs.needs-test-node == 'true'
     uses: ./.github/workflows/test-node.yml
+
+  test-codegen:
+    needs: judge-execute
+    if: needs.judge-execute.outputs.needs-test-codegen == 'true'
+    uses: ./.github/workflows/test-codegen.yml
 
   test-actions:
     needs: judge-execute

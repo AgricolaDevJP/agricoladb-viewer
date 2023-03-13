@@ -11,3 +11,6 @@ jobs:
 
   test-actions:
     uses: ./.github/workflows/test-actions.yml
+
+  test-codegen:
+    uses: ./.github/workflows/test-codegen.yml
