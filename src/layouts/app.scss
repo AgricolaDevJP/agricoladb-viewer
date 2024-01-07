@@ -1,0 +1,18 @@
+@use 'bootstrap/scss/bootstrap.scss' with (
+  $primary: #ff9800,
+  $secondary: #444250,
+  $link-color: #2196f3,
+  $table-cell-padding-y: 0.75rem,
+  $table-cell-padding-x: 0.75rem
+);
+
+:root {
+  --card-occupation-color: #fbc02d;
+  --card-minor-improvement-color: #f57c00;
+  --card-major-improvement-color: #c2185b;
+  --card-x-deck-color: #689f38;
+  --card-forest-deck-color: #5d4037;
+  --card-changeling-color: #303f9f;
+  --card-mother-color: #9b6034;
+  --card-father-color: #635a53;
+}

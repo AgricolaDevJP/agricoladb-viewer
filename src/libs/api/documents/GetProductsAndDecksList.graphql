@@ -1,0 +1,16 @@
+query GetDecksAndProductsList {
+  decks {
+    id
+    nameJa
+    revision {
+      key
+    }
+  }
+  products {
+    id
+    nameJa
+    revision {
+      key
+    }
+  }
+}

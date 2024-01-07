@@ -1,0 +1,40 @@
+---
+import Headline1 from '@/components/common/Headline1'
+import CardsExplorer from '@/components/pages/cards/CardsExplorer'
+import Layout from '@/layouts/Layout.astro'
+import { getSdk } from '@/libs/api/generated'
+import { revisionKeys } from '@/libs/domain/Revision'
+import { GraphQLClient } from 'graphql-request'
+import Container from 'react-bootstrap/Container'
+
+export async function getStaticPaths() {
+  const client = new GraphQLClient('http://localhost:8000/graphql')
+  const sdk = getSdk(client)
+  const res = await sdk.GetDecksAndProductsList()
+  return Promise.all(
+    revisionKeys.map(revisionKey => {
+      const products = res.products.filter(p => p.revision.key === revisionKey)
+      const decks = res.decks.filter(d => d.revision.key === revisionKey)
+      return {
+        params: {
+          revisionKey,
+        },
+        props: {
+          products,
+          decks,
+        },
+      }
+    }),
+  )
+}
+
+const { revisionKey } = Astro.params
+const { decks, products } = Astro.props
+---
+
+<Layout title={`カード一覧（${revisionKey}）`}>
+  <Container>
+    <Headline1>カード一覧（{revisionKey}）</Headline1>
+    <CardsExplorer client:load revisionKey={revisionKey} decks={decks} products={products} />
+  </Container>
+</Layout>

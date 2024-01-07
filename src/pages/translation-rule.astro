@@ -1,0 +1,13 @@
+---
+import Headline1 from '@/components/common/Headline1'
+import TranslationRuleTab from '@/components/pages/translation-rule/TranslationRuleTab'
+import Layout from '@/layouts/Layout.astro'
+import Container from 'react-bootstrap/Container'
+---
+
+<Layout title="AgricolaDB">
+  <Container>
+    <Headline1>翻訳ルール</Headline1>
+    <TranslationRuleTab client:load />
+  </Container>
+</Layout>

@@ -1,0 +1,72 @@
+query GetCardsDetailByRevision($revisionKey: String!) {
+  cards(where: { hasRevisionWith: { key: $revisionKey } }) {
+    edges {
+      node {
+        literalID
+        printedID
+        playAgricolaCardID
+        deck {
+          id
+          nameJa
+        }
+        products {
+          id
+          nameJa
+        }
+        cardType {
+          key
+          nameJa
+        }
+        cardSpecialColor {
+          key
+        }
+        nameJa
+        nameEn
+        minPlayersNumber
+        prerequisite
+        cost
+        description
+        note
+        isOfficialJa
+        victoryPoint
+        specialVictoryPoint
+        hasArrow
+        hasBonusPointIcon
+        hasNegativeBonusPointIcon
+        hasPanIcon
+        hasBreadIcon
+        hasFarmPlannerIcon
+        hasActionsBoosterIcon
+        hasPointsProviderIcon
+        hasGoodsProviderIcon
+        hasFoodProviderIcon
+        hasCropProviderIcon
+        hasBuildingResourceProviderIcon
+        hasLivestockProviderIcon
+        hasCutPeatIcon
+        hasFellTreesIcon
+        hasSlashAndBurnIcon
+        hasHiringFareIcon
+        children {
+          revision {
+            id
+            key
+          }
+          literalID
+          printedID
+          nameJa
+        }
+        ancestors {
+          revision {
+            id
+            key
+          }
+          literalID
+          printedID
+          nameJa
+        }
+      }
+    }
+    totalCount
+  }
+}

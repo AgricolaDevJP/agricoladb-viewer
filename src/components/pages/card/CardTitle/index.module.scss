@@ -1,0 +1,42 @@
+.title {
+  display: inline-flex;
+  align-items: center;
+}
+
+.titleOccupation {
+  color: var(--card-occupation-color);
+}
+
+.titleMinorImprovement {
+  color: var(--card-minor-improvement-color);
+}
+
+.titleMajorImprovement {
+  color: var(--card-major-improvement-color);
+}
+
+.titleXDeck {
+  color: var(--card-x-deck-color);
+}
+
+.titleForestDeck {
+  color: var(--card-forest-deck-color);
+}
+
+.titleChangeling {
+  color: var(--card-changeling-color);
+}
+
+.titleMother {
+  color: var(--card-mother-color);
+}
+
+.titleFather {
+  color: var(--card-father-color);
+}
+
+.tagBox {
+  margin-left: 1rem;
+  display: inline-flex;
+  align-items: center;
+}

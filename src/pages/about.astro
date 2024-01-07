@@ -1,0 +1,101 @@
+---
+import Headline1 from '@/components/common/Headline1'
+import Headline2 from '@/components/common/Headline2'
+import Layout from '@/layouts/Layout.astro'
+import Container from 'react-bootstrap/Container'
+---
+
+<Layout title="本サイトについて">
+  <Container>
+    <Headline1>本サイトについて</Headline1>
+    <Headline2>推奨環境</Headline2>
+    <p>AgricolaDB（以下、本サイト）は以下のブラウザの最新版でご覧いただくことを推奨します。</p>
+    <ul>
+      <li>Microsoft Edge</li>
+      <li>Mozilla Firefox</li>
+      <li>Google Chrome</li>
+      <li>Safari</li>
+    </ul>
+    <Headline2>利用規約</Headline2>
+    <ol>
+      <li>
+        本サイトを一般に公開する目的は以下に示す通りとしております。常識の範囲内でご利用いただき、目的外の利用はお控えください。
+        <ul>
+          <li>エラッタ情報の反映など、メンテナンスされたアグリコラの情報を共有するため</li>
+          <li>拡張入りアグリコラの楽しさを広めるため</li>
+          <li>アグリコラの戦術研究を補助するため</li>
+          <li>アグリコラに関連するアプリケーション開発を促進するため</li>
+        </ul>
+      </li>
+      <li>
+        本サイトで得られる情報は、Lookout Games・Z-man
+        Games・株式会社ホビージャパンなど、製品版を発売している企業の著作物を引用、もしくは Arthur
+        によって抄訳されたものとなります。本サイトに掲載されている情報の商用利用はお控えください。
+      </li>
+      <li>
+        本サイトのスクレイピングは禁止します。構造化された情報を必要とする場合は、
+        <a href="/graphql-api">AgricolaDB GraphQL API</a> をご利用ください。
+      </li>
+      <li>
+        本サイトの利用に関連して利用者もしくは第三者に生じた損害について、その賠償の責任を一切負いかねます。
+      </li>
+      <li>
+        本サイトを安定して運用できるよう努力をいたしますが、100%
+        の稼働を保証しません。本サイトは予告なくサービスを一時停止、終了することがございます。
+      </li>
+    </ol>
+    <Headline2>JavaScript・Cookie の利用</Headline2>
+    <p>
+      本サイトでは JavaScript
+      を利用しています。これを無効にした場合、ページを正常に表示できない場合があります。
+    </p>
+    <p>
+      また、本サイトでは Cookie
+      を利用しています。これを無効にした場合、一部の機能が動作しない場合があります。
+    </p>
+    <Headline2>Google Analyticsの利用</Headline2>
+    <p>
+      本サイトでは、アクセス分析ツールの Google Analytics を使用しております。Google
+      に特定の情報（アクセス状況やIPアドレスなど）を自動的に送信しています。また、ブラウザ単位で閲覧者数を計測するために、本サイトでは
+      Cookie を利用しています。
+    </p>
+    <p>
+      取得したデータは、Arthur
+      が提供する各種サービス（本サイト含む）の改善を目的としてのみ利用します。
+    </p>
+    <p>
+      <a href="https://tools.google.com/dlpage/gaoptout?hl=ja">
+        Google アナリティクス オプトアウト アドオン
+      </a>
+      を利用することなどでデータ収集を拒否できます。
+    </p>
+    <p>
+      また、Google のアクセス情報の収集・利用方法は、
+      <a href="https://marketingplatform.google.com/about/analytics/terms/jp/">
+        Google アナリティクス利用規約
+      </a>
+      および<a href="https://policies.google.com/privacy?hl=ja&gl=jp">Google ポリシーと規約</a>
+      によって定められています。
+    </p>
+    <Headline2>ソースコード</Headline2>
+    <p>
+      本サイトはオープンソースで開発しています。ソースコードは GitHub
+      にて公開しています。カードデータの訳を各自のものに置き換えたり、裁定を盛り込んで運用したりしたい場合には、以下のリポジトリを
+      fork してご利用ください。
+    </p>
+    <ul>
+      <li>
+        <a href="https://github.com/AgricolaDevJP/agricoladb-server">
+          AgricolaDevJP/agricoladb-server
+        </a>
+        （GraphQL APIサーバ）
+      </li>
+      <li>
+        <a href="https://github.com/AgricolaDevJP/agricoladb-viewer">
+          AgricolaDevJP/agricoladb-viewer
+        </a>
+        （Webサイト）
+      </li>
+    </ul>
+  </Container>
+</Layout>

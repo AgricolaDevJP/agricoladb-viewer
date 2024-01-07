@@ -1,0 +1,35 @@
+---
+import Footer from '@/components/layout/Footer'
+import Header from '@/components/layout/Header'
+import './app.scss'
+
+interface Props {
+  title?: string
+}
+
+const { title } = Astro.props
+const headTitle = title == undefined ? `AgricolaDB` : `${title} | AgricolaDB`
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{headTitle}</title>
+  </head>
+  <body>
+    <div class="d-flex flex-column vh-100">
+      <header>
+        <Header client:load />
+      </header>
+      <main class="mt-5"><slot /></main>
+      <footer class="footer mt-auto">
+        <Footer />
+      </footer>
+    </div>
+  </body>
+</html>

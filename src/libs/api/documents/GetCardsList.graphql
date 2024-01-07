@@ -1,0 +1,28 @@
+query GetCardsList($where: CardWhereInput!, $after: Cursor) {
+  cards(where: $where, first: 50, after: $after) {
+    edges {
+      node {
+        literalID
+        printedID
+        cardType {
+          key
+        }
+        cardSpecialColor {
+          key
+        }
+        revision {
+          id
+          key
+        }
+        nameJa
+        nameEn
+      }
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      endCursor
+    }
+    totalCount
+  }
+}
