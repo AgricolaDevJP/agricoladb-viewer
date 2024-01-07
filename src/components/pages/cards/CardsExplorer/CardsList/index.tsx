@@ -1,5 +1,5 @@
 import type { FC } from 'react'
-import ListGroup from 'react-bootstrap/ListGroup'
+import { ListGroup } from 'react-bootstrap'
 
 import type { CardSummary } from '@/libs/domain/Card'
 

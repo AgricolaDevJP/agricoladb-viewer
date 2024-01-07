@@ -1,5 +1,5 @@
 import type { FC } from 'react'
-import Table from 'react-bootstrap/Table'
+import { Table } from 'react-bootstrap'
 
 import type { CardDetail } from '@/libs/domain/Card'
 

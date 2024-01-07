@@ -5,7 +5,7 @@ import Layout from '@/layouts/Layout.astro'
 import { getSdk } from '@/libs/api/generated'
 import { revisionKeys } from '@/libs/domain/Revision'
 import { GraphQLClient } from 'graphql-request'
-import Container from 'react-bootstrap/Container'
+import { Container } from 'react-bootstrap'
 
 export async function getStaticPaths() {
   const client = new GraphQLClient('http://localhost:8000/graphql')

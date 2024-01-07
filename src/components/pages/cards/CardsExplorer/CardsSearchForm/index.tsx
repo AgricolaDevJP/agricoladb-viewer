@@ -1,7 +1,5 @@
 import { type FC, type FormEventHandler, useCallback } from 'react'
-import Button from 'react-bootstrap/Button'
-import FloatingLabel from 'react-bootstrap/FloatingLabel'
-import Form from 'react-bootstrap/form'
+import { Button, FloatingLabel, Form } from 'react-bootstrap'
 
 import type { DeckSummary } from '@/libs/domain/Deck'
 import type { ProductSummary } from '@/libs/domain/Product'

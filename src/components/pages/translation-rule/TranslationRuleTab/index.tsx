@@ -1,6 +1,5 @@
 import type { FC } from 'react'
-import Tab from 'react-bootstrap/Tab'
-import Tabs from 'react-bootstrap/Tabs'
+import { Tab, Tabs } from 'react-bootstrap'
 
 import Headline2 from '@/components/common/Headline2'
 

@@ -1,11 +1,7 @@
 import classNames from 'classnames'
 import { GraphQLClient } from 'graphql-request'
 import { type FC, useCallback, useEffect, useRef, useState } from 'react'
-// Colをreact-bootstrap/Colからimportするとエラーになる
-// cf.) https://github.com/react-bootstrap/react-bootstrap/issues/6539
-import { Col } from 'react-bootstrap'
-import Row from 'react-bootstrap/Row'
-import Spinner from 'react-bootstrap/Spinner'
+import { Col, Row, Spinner } from 'react-bootstrap'
 
 import Headline2 from '@/components/common/Headline2'
 import {

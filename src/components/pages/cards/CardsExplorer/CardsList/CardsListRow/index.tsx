@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import type { FC } from 'react'
-import ListGroupItem from 'react-bootstrap/ListGroupItem'
+import { ListGroupItem } from 'react-bootstrap'
 
 import CardIDBadge from '@/components/card/CardIDBadge'
 import type { CardSummary } from '@/libs/domain/Card'

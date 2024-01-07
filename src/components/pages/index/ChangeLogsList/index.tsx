@@ -1,6 +1,6 @@
 import { compareDesc, format } from 'date-fns'
 import type { FC } from 'react'
-import ListGroup from 'react-bootstrap/ListGroup'
+import { ListGroup } from 'react-bootstrap'
 
 import type { ChangeLog } from '@/libs/changeLogs'
 
