@@ -1,5 +1,6 @@
 import type { FC } from 'react'
 import { Table } from 'react-bootstrap'
+import { FaExternalLinkAlt } from 'react-icons/fa'
 
 import type { CardDetail } from '@/libs/domain/Card'
 import { isNonNullable } from '@/libs/utils/types'
@@ -50,7 +51,7 @@ const CardMetaTable: FC<CardMetaTableProps> = ({ card }) => {
               <a
                 href={`http://playagricola.com/Agricola/Cards/index.php?id=${card.playAgricolaCardID}`}
               >
-                {card.playAgricolaCardID}
+                {card.playAgricolaCardID} <FaExternalLinkAlt />
               </a>
             ) : (
               '未掲載'
