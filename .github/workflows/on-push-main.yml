@@ -8,5 +8,6 @@ on:
 jobs:
   deploy:
     uses: ./.github/workflows/wf-deploy.yml
+    secrets: inherit
     with:
       environment: production
