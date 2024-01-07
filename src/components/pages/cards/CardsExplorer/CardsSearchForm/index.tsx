@@ -1,4 +1,11 @@
-import { type FC, type FormEventHandler, useCallback } from 'react'
+import {
+  type ChangeEventHandler,
+  type FC,
+  type FormEventHandler,
+  type MouseEventHandler,
+  useCallback,
+  useState,
+} from 'react'
 import { Button, FloatingLabel, Form } from 'react-bootstrap'
 
 import type { DeckSummary } from '@/libs/domain/Deck'
@@ -19,6 +26,8 @@ const CardsSearchForm: FC<CardsSearchFormProps> = ({
   searchCondition,
   onSubmit,
 }) => {
+  const [disableSubmit, setDisableSubmit] = useState<boolean>(true)
+
   const formNames = {
     product: 'product',
     deck: 'deck',
@@ -28,17 +37,34 @@ const CardsSearchForm: FC<CardsSearchFormProps> = ({
     description: 'description',
   } as const
 
+  const [lastSelectedCardType, setLastSelectedCardType] = useState<string>()
+
+  // clickでしかラジオボタンのチェック状態をクリアできないのa11y的に微妙かも
+  const onClickCardTypeRadio: MouseEventHandler<HTMLInputElement> = useCallback(
+    e => {
+      if (lastSelectedCardType === e.currentTarget.value) {
+        e.currentTarget.checked = false
+        setLastSelectedCardType('')
+      }
+    },
+    [lastSelectedCardType],
+  )
+
+  const onChangeCardTypeRadio: ChangeEventHandler<HTMLInputElement> = useCallback(e => {
+    setLastSelectedCardType(e.currentTarget.value)
+  }, [])
+
   const _onSubmit: FormEventHandler<HTMLFormElement> = useCallback(
     e => {
       e.preventDefault()
-      const form = new FormData(e.currentTarget)
+      const formData = new FormData(e.currentTarget)
       // TODO: FormDataEntryValue -> stringを型安全にチェック
-      const productID = (form.get(formNames.product) as string) || undefined
-      const deckID = (form.get(formNames.deck) as string) || undefined
-      const cardType = (form.get(formNames.cardType) as CardTypeCondition) || undefined
-      const nameJa = (form.get(formNames.nameJa) as string) || undefined
-      const nameEn = (form.get(formNames.nameEn) as string) || undefined
-      const description = (form.get(formNames.description) as string) || undefined
+      const productID = (formData.get(formNames.product) as string) || undefined
+      const deckID = (formData.get(formNames.deck) as string) || undefined
+      const cardType = (formData.get(formNames.cardType) as CardTypeCondition) || undefined
+      const nameJa = (formData.get(formNames.nameJa) as string) || undefined
+      const nameEn = (formData.get(formNames.nameEn) as string) || undefined
+      const description = (formData.get(formNames.description) as string) || undefined
       const searchCondition: CardsSearchCondition = {
         productID,
         deckID,
@@ -48,12 +74,18 @@ const CardsSearchForm: FC<CardsSearchFormProps> = ({
         description,
       }
       onSubmit(searchCondition)
+      setDisableSubmit(true)
     },
     [onSubmit],
   )
 
   return (
-    <Form onSubmit={_onSubmit}>
+    <Form
+      onSubmit={_onSubmit}
+      onChange={() => {
+        setDisableSubmit(false)
+      }}
+    >
       <FloatingLabel className="mb-3" label="収録製品" controlId="formProduct">
         <Form.Select name={formNames.product} defaultValue={searchCondition.productID}>
           <option value="">[未選択]</option>
@@ -92,6 +124,8 @@ const CardsSearchForm: FC<CardsSearchFormProps> = ({
               type="radio"
               id={`formCardType_${cardType.value}`}
               defaultChecked={searchCondition.cardType === cardType.value}
+              onClick={onClickCardTypeRadio}
+              onChange={onChangeCardTypeRadio}
             />
           ))}
         </div>
@@ -109,11 +143,8 @@ const CardsSearchForm: FC<CardsSearchFormProps> = ({
           defaultValue={searchCondition.description}
         />
       </FloatingLabel>
-      <Button variant="info" type="submit">
+      <Button variant="info" type="submit" disabled={disableSubmit}>
         検索
-      </Button>{' '}
-      <Button variant="secondary" type="reset">
-        クリア
       </Button>
     </Form>
   )

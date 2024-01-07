@@ -9,6 +9,7 @@ type CardDescriptionListTableProps = Readonly<{
   card: Pick<
     CardDetail,
     | 'cardType'
+    | 'minPlayersNumber'
     | 'prerequisite'
     | 'cost'
     | 'victoryPoint'
@@ -23,7 +24,10 @@ const CardDescriptionListTable: FC<CardDescriptionListTableProps> = ({ card }) =
   return (
     <dl>
       <dt>種類</dt>
-      <dd>{card.cardType.nameJa}</dd>
+      <dd>
+        {card.cardType.nameJa}
+        {card.minPlayersNumber && <>（{card.minPlayersNumber}+）</>}
+      </dd>
       {card.prerequisite && (
         <>
           <dt>前提</dt>
