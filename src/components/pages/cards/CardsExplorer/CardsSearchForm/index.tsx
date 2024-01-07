@@ -7,6 +7,7 @@ import {
   useState,
 } from 'react'
 import { Button, FloatingLabel, Form } from 'react-bootstrap'
+import { FaSearch } from 'react-icons/fa'
 
 import type { DeckSummary } from '@/libs/domain/Deck'
 import type { ProductSummary } from '@/libs/domain/Product'
@@ -145,7 +146,7 @@ const CardsSearchForm: FC<CardsSearchFormProps> = ({
         />
       </FloatingLabel>
       <Button variant="info" type="submit" disabled={disableSubmit}>
-        検索
+        <FaSearch /> 検索
       </Button>
     </Form>
   )
