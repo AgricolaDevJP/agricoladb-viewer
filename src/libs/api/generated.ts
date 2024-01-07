@@ -916,7 +916,7 @@ export type GetCardsDetailByRevisionQueryVariables = Exact<{
 }>;
 
 
-export type GetCardsDetailByRevisionQuery = { __typename?: 'Query', cards: { __typename?: 'CardConnection', totalCount: number, edges?: Array<{ __typename?: 'CardEdge', node?: { __typename?: 'Card', literalID: string, printedID?: string | null, playAgricolaCardID?: string | null, nameJa?: string | null, nameEn?: string | null, minPlayersNumber?: number | null, prerequisite?: string | null, cost?: string | null, description?: string | null, note?: string | null, isOfficialJa: boolean, victoryPoint?: number | null, specialVictoryPoint?: string | null, hasArrow: boolean, hasBonusPointIcon: boolean, hasNegativeBonusPointIcon: boolean, hasPanIcon: boolean, hasBreadIcon: boolean, hasFarmPlannerIcon: boolean, hasActionsBoosterIcon: boolean, hasPointsProviderIcon: boolean, hasGoodsProviderIcon: boolean, hasFoodProviderIcon: boolean, hasCropProviderIcon: boolean, hasBuildingResourceProviderIcon: boolean, hasLivestockProviderIcon: boolean, hasCutPeatIcon: boolean, hasFellTreesIcon: boolean, hasSlashAndBurnIcon: boolean, hasHiringFareIcon: boolean, deck?: { __typename?: 'Deck', id: string, nameJa?: string | null } | null, products?: Array<{ __typename?: 'Product', id: string, nameJa?: string | null }> | null, cardType: { __typename?: 'CardType', key: string, nameJa?: string | null }, cardSpecialColor?: { __typename?: 'CardSpecialColor', key: string } | null, children?: Array<{ __typename?: 'Card', literalID: string, printedID?: string | null, nameJa?: string | null, revision: { __typename?: 'Revision', id: string, key: string } }> | null, ancestors?: Array<{ __typename?: 'Card', literalID: string, printedID?: string | null, nameJa?: string | null, revision: { __typename?: 'Revision', id: string, key: string } }> | null } | null } | null> | null } };
+export type GetCardsDetailByRevisionQuery = { __typename?: 'Query', cards: { __typename?: 'CardConnection', totalCount: number, edges?: Array<{ __typename?: 'CardEdge', node?: { __typename?: 'Card', literalID: string, printedID?: string | null, playAgricolaCardID?: string | null, nameJa?: string | null, nameEn?: string | null, minPlayersNumber?: number | null, prerequisite?: string | null, cost?: string | null, description?: string | null, note?: string | null, isOfficialJa: boolean, victoryPoint?: number | null, specialVictoryPoint?: string | null, hasArrow: boolean, hasBonusPointIcon: boolean, hasNegativeBonusPointIcon: boolean, hasPanIcon: boolean, hasBreadIcon: boolean, hasFarmPlannerIcon: boolean, hasActionsBoosterIcon: boolean, hasPointsProviderIcon: boolean, hasGoodsProviderIcon: boolean, hasFoodProviderIcon: boolean, hasCropProviderIcon: boolean, hasBuildingResourceProviderIcon: boolean, hasLivestockProviderIcon: boolean, hasCutPeatIcon: boolean, hasFellTreesIcon: boolean, hasSlashAndBurnIcon: boolean, hasHiringFareIcon: boolean, deck?: { __typename?: 'Deck', id: string, nameJa?: string | null, revision: { __typename?: 'Revision', key: string } } | null, products?: Array<{ __typename?: 'Product', id: string, nameJa?: string | null, revision: { __typename?: 'Revision', key: string } }> | null, cardType: { __typename?: 'CardType', key: string, nameJa?: string | null }, cardSpecialColor?: { __typename?: 'CardSpecialColor', key: string } | null, children?: Array<{ __typename?: 'Card', literalID: string, printedID?: string | null, nameJa?: string | null, revision: { __typename?: 'Revision', id: string, key: string } }> | null, ancestors?: Array<{ __typename?: 'Card', literalID: string, printedID?: string | null, nameJa?: string | null, revision: { __typename?: 'Revision', id: string, key: string } }> | null } | null } | null> | null } };
 
 export type GetCardsListQueryVariables = Exact<{
   where: CardWhereInput;
@@ -943,10 +943,16 @@ export const GetCardsDetailByRevisionDocument = gql`
         deck {
           id
           nameJa
+          revision {
+            key
+          }
         }
         products {
           id
           nameJa
+          revision {
+            key
+          }
         }
         cardType {
           key

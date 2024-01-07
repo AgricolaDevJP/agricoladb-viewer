@@ -8,10 +8,16 @@ query GetCardsDetailByRevision($revisionKey: String!) {
         deck {
           id
           nameJa
+          revision {
+            key
+          }
         }
         products {
           id
           nameJa
+          revision {
+            key
+          }
         }
         cardType {
           key

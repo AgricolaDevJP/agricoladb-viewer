@@ -9,10 +9,16 @@ import type { CardTypeCondition, CardsSearchCondition } from '..'
 type CardsSearchFormProps = Readonly<{
   decks: Readonly<DeckSummary[]>
   products: Readonly<ProductSummary[]>
+  searchCondition: CardsSearchCondition
   onSubmit: (c: CardsSearchCondition) => void
 }>
 
-const CardsSearchForm: FC<CardsSearchFormProps> = ({ decks, products, onSubmit }) => {
+const CardsSearchForm: FC<CardsSearchFormProps> = ({
+  decks,
+  products,
+  searchCondition,
+  onSubmit,
+}) => {
   const formNames = {
     product: 'product',
     deck: 'deck',
@@ -49,7 +55,7 @@ const CardsSearchForm: FC<CardsSearchFormProps> = ({ decks, products, onSubmit }
   return (
     <Form onSubmit={_onSubmit}>
       <FloatingLabel className="mb-3" label="収録製品" controlId="formProduct">
-        <Form.Select name={formNames.product}>
+        <Form.Select name={formNames.product} defaultValue={searchCondition.productID}>
           <option value="">[未選択]</option>
           {products.map(product => (
             <option value={product.id} key={product.id}>
@@ -59,7 +65,7 @@ const CardsSearchForm: FC<CardsSearchFormProps> = ({ decks, products, onSubmit }
         </Form.Select>
       </FloatingLabel>
       <FloatingLabel className="mb-3" label="デッキ" controlId="formDeck">
-        <Form.Select name={formNames.deck}>
+        <Form.Select name={formNames.deck} defaultValue={searchCondition.deckID}>
           <option value="">[未選択]</option>
           {decks.map(deck => (
             <option value={deck.id} key={deck.id}>
@@ -85,18 +91,23 @@ const CardsSearchForm: FC<CardsSearchFormProps> = ({ decks, products, onSubmit }
               value={cardType.value}
               type="radio"
               id={`formCardType_${cardType.value}`}
+              defaultChecked={searchCondition.cardType === cardType.value}
             />
           ))}
         </div>
       </Form.Group>
       <FloatingLabel className="mb-3" label="カード名（日本語）" controlId="formNameJa">
-        <Form.Control type="text" name={formNames.nameJa} />
+        <Form.Control type="text" name={formNames.nameJa} defaultValue={searchCondition.nameJa} />
       </FloatingLabel>
       <FloatingLabel className="mb-3" label="カード名（英語）" controlId="formNameEn">
-        <Form.Control type="text" name={formNames.nameEn} />
+        <Form.Control type="text" name={formNames.nameEn} defaultValue={searchCondition.nameEn} />
       </FloatingLabel>
       <FloatingLabel className="mb-3" label="テキスト" controlId="formDescription">
-        <Form.Control type="text" name={formNames.description} />
+        <Form.Control
+          type="text"
+          name={formNames.description}
+          defaultValue={searchCondition.description}
+        />
       </FloatingLabel>
       <Button variant="info" type="submit">
         検索

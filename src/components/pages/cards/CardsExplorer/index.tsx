@@ -20,7 +20,8 @@ import CardsList from './CardsList'
 import CardsSearchForm from './CardsSearchForm'
 import styles from './index.module.scss'
 
-export type CardTypeCondition = 'occupation' | 'minor_improvement' | 'major_improvement' | 'misc'
+const cardTypeConditions = ['occupation', 'minor_improvement', 'major_improvement', 'misc'] as const
+export type CardTypeCondition = (typeof cardTypeConditions)[number]
 
 export type CardsSearchCondition = Readonly<{
   productID: string | undefined
@@ -30,6 +31,25 @@ export type CardsSearchCondition = Readonly<{
   nameEn: string | undefined
   description: string | undefined
 }>
+
+const paramsToSearchCondition = (params: URLSearchParams): CardsSearchCondition => {
+  const productID = params.get('productID')
+  const deckID = params.get('deckID')
+  const cardType = params.get('cardType')
+  const nameJa = params.get('nameJa')
+  const nameEn = params.get('nameEn')
+  const description = params.get('description')
+  const isCardType = (cardType: string): cardType is CardTypeCondition =>
+    cardTypeConditions.some(c => c === cardType)
+  return {
+    productID: productID !== null ? productID : undefined,
+    deckID: deckID !== null ? deckID : undefined,
+    cardType: cardType !== null && isCardType(cardType) ? cardType : undefined,
+    nameJa: nameJa !== null ? nameJa : undefined,
+    nameEn: nameEn !== null ? nameEn : undefined,
+    description: description !== null ? description : undefined,
+  }
+}
 
 const searchConditionToWhere = (revisionKey: string, searchCondition: CardsSearchCondition) => {
   let hasCardTypeWith: CardTypeWhereInput['hasCardsWith']
@@ -72,14 +92,6 @@ type CardsExplorerProps = Readonly<{
 }>
 
 const CardsExplorer: FC<CardsExplorerProps> = ({ revisionKey, decks, products }) => {
-  const [searchCondition, setSearchCondition] = useState<CardsSearchCondition>({
-    productID: undefined,
-    deckID: undefined,
-    cardType: undefined,
-    nameJa: undefined,
-    nameEn: undefined,
-    description: undefined,
-  })
   const [cards, setCards] = useState<CardSummary[]>([])
   const [pageInfo, setPageInfo] = useState<PageInfo | undefined>(undefined)
   const [totalCount, setTotalCount] = useState<number | undefined>(undefined)
@@ -88,10 +100,12 @@ const CardsExplorer: FC<CardsExplorerProps> = ({ revisionKey, decks, products })
 
   const hasMore = pageInfo === undefined || pageInfo.hasNextPage
 
+  const params = new URLSearchParams(window.location.search)
+  const searchCondition: CardsSearchCondition = paramsToSearchCondition(params)
+  const where = searchConditionToWhere(revisionKey, searchCondition)
+
   const client = new GraphQLClient('http://localhost:8000/graphql')
   const sdk = getSdk(client)
-
-  const where = searchConditionToWhere(revisionKey, searchCondition)
 
   const fetchMore = useCallback(async () => {
     if (!hasMore || isLoading) return
@@ -107,11 +121,18 @@ const CardsExplorer: FC<CardsExplorerProps> = ({ revisionKey, decks, products })
     setIsLoading(false)
   }, [hasMore, pageInfo, where])
 
-  const onSubmitSearch = useCallback((searchCondition: CardsSearchCondition) => {
+  const onSubmitSearch = useCallback((condition: CardsSearchCondition) => {
     setCards([])
     setPageInfo(undefined)
     setTotalCount(undefined)
-    setSearchCondition(searchCondition)
+    const params = new URLSearchParams()
+    condition.productID !== undefined && params.append('productID', condition.productID)
+    condition.deckID !== undefined && params.append('deckID', condition.deckID)
+    condition.cardType !== undefined && params.append('cardType', condition.cardType)
+    condition.nameJa !== undefined && params.append('nameJa', condition.nameJa)
+    condition.nameEn !== undefined && params.append('nameEn', condition.nameEn)
+    condition.description !== undefined && params.append('description', condition.description)
+    window.history.replaceState({}, '', `?${params.toString()}`)
   }, [])
 
   useEffect(() => {
@@ -134,7 +155,12 @@ const CardsExplorer: FC<CardsExplorerProps> = ({ revisionKey, decks, products })
       <Col md={4}>
         <div className={classNames(styles.CardsSearchFormBox)}>
           <Headline2>検索条件</Headline2>
-          <CardsSearchForm decks={decks} products={products} onSubmit={onSubmitSearch} />
+          <CardsSearchForm
+            decks={decks}
+            products={products}
+            onSubmit={onSubmitSearch}
+            searchCondition={searchCondition}
+          />
           {totalCount !== undefined && <p className="mt-2">{totalCount}件ヒットしました</p>}
         </div>
       </Col>

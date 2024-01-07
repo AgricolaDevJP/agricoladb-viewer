@@ -2,6 +2,7 @@ import type { FC } from 'react'
 import { Table } from 'react-bootstrap'
 
 import type { CardDetail } from '@/libs/domain/Card'
+import { isNonNullable } from '@/libs/utils/types'
 
 import styles from './index.module.scss'
 
@@ -18,14 +19,26 @@ const CardMetaTable: FC<CardMetaTableProps> = ({ card }) => {
       <tbody>
         <tr>
           <th scope="row">デッキ</th>
-          <td>{card.deck?.nameJa ?? '-'}</td>
+          <td>
+            {isNonNullable(card.deck) ? (
+              <a href={`/${card.deck.revision.key}/cards?deckID=${card.deck.id}`}>
+                {card.deck.nameJa}
+              </a>
+            ) : (
+              '-'
+            )}
+          </td>
         </tr>
         <tr>
           <th scope="row">収録製品</th>
           <td>
             <ul className={styles.list}>
               {(card.products ?? []).map(product => (
-                <li key={product.id}>{product.nameJa}</li>
+                <li key={product.id}>
+                  <a href={`/${product.revision.key}/cards?productID=${product.id}`}>
+                    {product.nameJa}
+                  </a>
+                </li>
               ))}
             </ul>
           </td>
