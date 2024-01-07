@@ -1,0 +1,40 @@
+name: Cloudflare Pages
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  deployments: write
+
+concurrency:
+  group: ${{ inputs.environment }}
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: latest
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.node-version'
+          cache: pnpm
+      - name: install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: build
+        run: pnpm build
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@1
+        with:
+          accountId: d8ffa051ff726193056507455bf58eb1
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          projectName: agricoladb-viewer
+          directory: dist/
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
