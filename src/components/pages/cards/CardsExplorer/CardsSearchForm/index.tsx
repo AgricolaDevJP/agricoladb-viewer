@@ -45,6 +45,7 @@ const CardsSearchForm: FC<CardsSearchFormProps> = ({
       if (lastSelectedCardType === e.currentTarget.value) {
         e.currentTarget.checked = false
         setLastSelectedCardType('')
+        setDisableSubmit(false)
       }
     },
     [lastSelectedCardType],
