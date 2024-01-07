@@ -10,7 +10,7 @@ module.exports = {
     'prettier-plugin-astro',
     'prettier-plugin-astro-organize-imports',
   ],
-  importOrder: ['^@/(components|layouts|libs|pages)/(.*)$', '^[./]'],
+  importOrder: ['^@/(components|layouts|libs|pages|img)/(.*)$', '^[./]'],
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,
   overrides: [
