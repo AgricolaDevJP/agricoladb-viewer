@@ -14,12 +14,15 @@ type CardTitleProps = Readonly<{
 
 const CardTitle: FC<CardTitleProps> = ({ card, children }) => {
   return (
-    <h1 className={classNames('mt-4', styles.title)}>
-      <span className={classNames(getTitleClass(card))}>
-        {card.nameJa || card.nameEn || 'NO NAME'}
-      </span>
-      {children !== undefined && <span className={styles.tagBox}>{children}</span>}
-    </h1>
+    <>
+      <h1 className={classNames('mt-4', styles.title)}>
+        <span className={classNames(getTitleClass(card))}>
+          {card.nameJa || card.nameEn || 'NO NAME'}
+        </span>
+        {children !== undefined && <span className={styles.tagBox}>{children}</span>}
+      </h1>
+      <div className="text-secondary text-end">{card.nameEn}</div>
+    </>
   )
 }
 
