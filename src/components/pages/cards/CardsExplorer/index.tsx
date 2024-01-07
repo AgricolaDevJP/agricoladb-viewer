@@ -104,7 +104,7 @@ const CardsExplorer: FC<CardsExplorerProps> = ({ revisionKey, decks, products })
   const searchCondition: CardsSearchCondition = paramsToSearchCondition(params)
   const where = searchConditionToWhere(revisionKey, searchCondition)
 
-  const client = new GraphQLClient('http://localhost:8000/graphql')
+  const client = new GraphQLClient('https://api.db.agricolajp.dev/graphql')
   const sdk = getSdk(client)
 
   const fetchMore = useCallback(async () => {
