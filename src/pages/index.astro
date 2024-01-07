@@ -4,9 +4,11 @@ import ChangeLogsList from '@/components/pages/index/ChangeLogsList'
 import Layout from '@/layouts/Layout.astro'
 import { changeLogs } from '@/libs/changeLogs'
 import { Container } from 'react-bootstrap'
+
+const { pathname } = Astro.url
 ---
 
-<Layout title="AgricolaDB">
+<Layout title="AgricolaDB" pathname={pathname}>
   <Container>
     <div class="bg-light p-4 p-sm-5 my-4 rounded">
       <h1 class="display-3">AgricolaDB</h1>

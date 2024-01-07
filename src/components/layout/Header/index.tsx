@@ -1,10 +1,14 @@
 import type { FC } from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 
+type HeaderNavProps = Readonly<{
+  pathname: string
+}>
+
 // TODO: activeKeyをパスから指定する
-const HeaderNav: FC = () => {
+const HeaderNav: FC<HeaderNavProps> = ({ pathname }) => {
   return (
-    <Nav className="mr-auto" activeKey="/">
+    <Nav className="mr-auto" activeKey={pathname}>
       <Nav.Link eventKey="/" href="/">
         Home
       </Nav.Link>
@@ -27,13 +31,17 @@ const HeaderNav: FC = () => {
   )
 }
 
-const Header: FC = () => (
+type HeaderProps = Readonly<{
+  pathname: string
+}>
+
+const Header: FC<HeaderProps> = ({ pathname }) => (
   <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark" fixed="top">
     <Container fluid>
       <Navbar.Brand href="/">AgricolaDB</Navbar.Brand>
       <Navbar.Toggle aria-controls="navbar_nav" />
       <Navbar.Collapse id="navbar_nav">
-        <HeaderNav />
+        <HeaderNav pathname={pathname} />
       </Navbar.Collapse>
     </Container>
   </Navbar>

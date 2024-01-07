@@ -30,9 +30,10 @@ export async function getStaticPaths() {
 
 const { revisionKey } = Astro.params
 const { decks, products } = Astro.props
+const { pathname } = Astro.url
 ---
 
-<Layout title={`カード一覧（${revisionKey}）`}>
+<Layout title={`カード一覧（${revisionKey}）`} pathname={pathname}>
   <Container>
     <Headline1>カード一覧（{revisionKey}）</Headline1>
     <CardsExplorer client:load revisionKey={revisionKey} decks={decks} products={products} />

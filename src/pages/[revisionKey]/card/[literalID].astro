@@ -34,9 +34,10 @@ export async function getStaticPaths() {
 }
 
 const { card } = Astro.props
+const { pathname } = Astro.url
 ---
 
-<Layout title={card.nameJa ?? ''}>
+<Layout title={card.nameJa ?? ''} pathname={pathname}>
   <Container>
     <CardTitle card={card}>
       <CardIDBadge card={card} />
