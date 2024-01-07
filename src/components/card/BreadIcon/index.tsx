@@ -1,6 +1,6 @@
 import type { FC } from 'react'
 
-import breadIconImg from '@/img/icon/bread.svg'
+import breadIconImg from '@/img/cardIcon/bread.svg'
 
 import styles from './index.module.scss'
 

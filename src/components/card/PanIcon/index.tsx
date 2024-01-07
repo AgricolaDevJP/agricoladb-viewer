@@ -1,6 +1,6 @@
 import type { FC } from 'react'
 
-import panIconImg from '@/img/icon/Pan.svg'
+import panIconImg from '@/img/cardIcon/Pan.svg'
 
 import styles from './index.module.scss'
 
