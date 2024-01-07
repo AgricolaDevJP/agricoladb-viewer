@@ -13,6 +13,7 @@
   "dependencies": {
     "@astrojs/check": "^0.3.4",
     "@astrojs/react": "^3.0.9",
+    "@fontsource/noto-sans-jp": "^5.0.17",
     "@graphql-codegen/cli": "5.0.0",
     "@graphql-codegen/client-preset": "4.1.0",
     "@graphql-typed-document-node/core": "^3.2.0",
