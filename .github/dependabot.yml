@@ -11,4 +11,4 @@ updates:
     groups:
       dependencies:
         patterns:
-          - "*"
+          - '*'

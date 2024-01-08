@@ -4,8 +4,11 @@
     "baseUrl": ".",
     "jsx": "react-jsx",
     "jsxImportSource": "react",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
     "paths": {
       "@/*": ["src/*"]
     }
-  }
+  },
+  "exclude": ["dist"]
 }
