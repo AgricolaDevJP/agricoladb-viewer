@@ -6,6 +6,9 @@ on:
       - main
 
 jobs:
+  test-node:
+    uses: ./.github/workflows/wf-test-node.yml
+
   deploy:
     uses: ./.github/workflows/wf-deploy.yml
     secrets: inherit
