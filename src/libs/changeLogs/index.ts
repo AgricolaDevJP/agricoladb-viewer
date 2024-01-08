@@ -30,7 +30,7 @@ export const changeLogs: readonly ChangeLog[] = [
   },
   {
     id: 5,
-    timestamp: parseISO('2023-01-01'),
+    timestamp: parseISO('2024-01-09'),
     description: 'AgricolaDB および AgricolaDB API をリニューアルしました',
   },
 ] as const
