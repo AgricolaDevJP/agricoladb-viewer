@@ -1,0 +1,14 @@
+---
+import Headline1 from '@/components/common/Headline1'
+import Layout from '@/layouts/Layout.astro'
+import { Container } from 'react-bootstrap'
+
+const { pathname } = Astro.url
+---
+
+<Layout title="Not Found" pathname={pathname}>
+  <Container>
+    <Headline1>404 Not Found</Headline1>
+    <p>お探しのページは見つかりませんでした。上のメニューから目的のページをお探しください。</p>
+  </Container>
+</Layout>
