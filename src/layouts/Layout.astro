@@ -6,21 +6,33 @@ import './app.scss'
 
 interface Props {
   title?: string
+  description?: string
   pathname: string
 }
 
-const { title, pathname } = Astro.props
-const headTitle = title == undefined ? `AgricolaDB` : `${title} | AgricolaDB`
+const { title, description, pathname } = Astro.props
+const headTitle = title === undefined ? 'AgricolaDB' : `${title} - AgricolaDB`
+const ogTitle = title ?? 'AgricolaDB'
+const canonicalUrl = new URL(pathname, Astro.site).toString()
+const _description =
+  description ??
+  'ボードゲーム「アグリコラ」に関する情報をまとめたWebサイトです。製品版の全てのカードを掲載する予定です。'
 ---
 
 <!doctype html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={_description} />
     <meta name="generator" content={Astro.generator} />
+    <meta property="og:site_name" content="AgricolaDB" />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:description" content={_description} />
+    <meta property="og:locale" content="ja_JP" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="canonical" href={canonicalUrl} />
     <title>{headTitle}</title>
   </head>
   <body>

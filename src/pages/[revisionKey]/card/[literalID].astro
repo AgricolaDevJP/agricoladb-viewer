@@ -33,11 +33,16 @@ export async function getStaticPaths() {
   ).flat()
 }
 
+const { revisionKey } = Astro.params
 const { card } = Astro.props
 const { pathname } = Astro.url
+const title = `[${card.printedID ?? card.literalID ?? '-'}] ${
+  card.nameJa ?? card.nameEn ?? 'NO NAME'
+}`
+const description = `アグリコラ（${revisionKey}）の ${title} に関するカード情報を掲載しています`
 ---
 
-<Layout title={card.nameJa ?? ''} pathname={pathname}>
+<Layout title={title} description={description} pathname={pathname}>
   <Container>
     <CardTitle card={card}>
       <CardIDBadge card={card} />
