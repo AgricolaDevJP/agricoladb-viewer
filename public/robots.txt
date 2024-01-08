@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: https://db.agricolajp.dev/sitemap-index.xml
