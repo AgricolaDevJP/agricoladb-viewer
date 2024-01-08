@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.3.4",
+    "@astrojs/partytown": "^2.0.3",
     "@astrojs/react": "^3.0.9",
     "@astrojs/sitemap": "^3.0.4",
     "@fontsource/noto-sans-jp": "^5.0.17",

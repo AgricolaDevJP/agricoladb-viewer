@@ -34,6 +34,16 @@ const _description =
     <link rel="icon" href="/favicon.ico" />
     <link rel="canonical" href={canonicalUrl} />
     <title>{headTitle}</title>
+    <script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-D2KF0XCCVL"
+    ></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'G-D2KF0XCCVL')
+    </script>
   </head>
   <body>
     <div class="d-flex flex-column vh-100">
