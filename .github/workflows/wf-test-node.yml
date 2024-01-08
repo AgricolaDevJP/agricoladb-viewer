@@ -3,6 +3,9 @@ name: test-node
 on:
   workflow_call:
 
+env:
+  TZ: Asia/Tokyo
+
 jobs:
   lint:
     runs-on: ubuntu-latest
