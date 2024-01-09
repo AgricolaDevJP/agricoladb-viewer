@@ -3,6 +3,7 @@ import CardIDBadge from '@/components/card/CardIDBadge'
 import Headline2 from '@/components/common/Headline2'
 import CardDescriptionList from '@/components/pages/card/CardDescriptionList'
 import CardMetaTable from '@/components/pages/card/CardMetaTable'
+import CardReportErrorLink from '@/components/pages/card/CardReportErrorLink'
 import CardTitle from '@/components/pages/card/CardTitle'
 import Layout from '@/layouts/Layout.astro'
 import { getSdk } from '@/libs/api/generated'
@@ -50,5 +51,6 @@ const description = `アグリコラ（${revisionKey}）の ${title} に関す�
     <CardDescriptionList card={card} />
     <Headline2>メタ情報</Headline2>
     <CardMetaTable card={card} />
+    <CardReportErrorLink card={card} revisionKey={revisionKey} />
   </Container>
 </Layout>
