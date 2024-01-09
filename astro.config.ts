@@ -15,7 +15,7 @@ export default defineConfig({
       },
     }),
     purgecss({
-      safelist: ['btn-info'],
+      safelist: ['btn-info', 'row', 'col-md-4', 'col-md-8', 'spinner-border'],
     }),
   ],
   vite: {
