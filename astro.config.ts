@@ -15,7 +15,14 @@ export default defineConfig({
       },
     }),
     purgecss({
-      safelist: ['btn-info', 'row', 'col-md-4', 'col-md-8', 'spinner-border'],
+      safelist: [
+        'btn-info',
+        'row',
+        'col-md-4',
+        'col-md-8',
+        'spinner-border',
+        'list-group-item-action',
+      ],
     }),
   ],
   vite: {
