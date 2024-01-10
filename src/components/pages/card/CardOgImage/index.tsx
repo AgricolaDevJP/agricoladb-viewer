@@ -57,7 +57,7 @@ const CardOgImage: FC<CardOgImageProps> = ({ card }) => (
               right: '30px',
             }}
           >
-            https://agricolajp.dev/
+            https://db.agricolajp.dev/
           </div>
         </div>
       </div>
@@ -129,4 +129,4 @@ export default CardOgImage
 export const cardOgImageAltText = (card: CardOgImageProps['card']) =>
   `[${card.printedID ?? card.literalID ?? '-'}] ${card.nameJa ?? card.nameEn ?? ''} ${
     card.nameEn ?? ''
-  } Agricola DB https://agricolajp.dev/`
+  } Agricola DB https://db.agricolajp.dev/`
