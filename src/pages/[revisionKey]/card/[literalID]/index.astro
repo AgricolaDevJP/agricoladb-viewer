@@ -1,0 +1,62 @@
+---
+import CardIDBadge from '@/components/card/CardIDBadge'
+import Headline2 from '@/components/common/Headline2'
+import CardDescriptionList from '@/components/pages/card/CardDescriptionList'
+import CardMetaTable from '@/components/pages/card/CardMetaTable'
+import { cardOgImageAltText } from '@/components/pages/card/CardOgImage'
+import CardReportErrorLink from '@/components/pages/card/CardReportErrorLink'
+import CardTitle from '@/components/pages/card/CardTitle'
+import Layout from '@/layouts/Layout.astro'
+import { getSdk } from '@/libs/api/generated'
+import { revisionKeys } from '@/libs/domain/Revision'
+import { isNonNullable } from '@/libs/utils/types'
+import { GraphQLClient } from 'graphql-request'
+import { Container } from 'react-bootstrap'
+
+export async function getStaticPaths() {
+  const client = new GraphQLClient('https://api.db.agricolajp.dev/graphql')
+  const sdk = getSdk(client)
+  return (
+    await Promise.all(
+      revisionKeys.map(async revisionKey => {
+        const res = await sdk.GetCardsDetailByRevision({ revisionKey })
+        const cards = res.cards?.edges?.map(e => e?.node).filter(isNonNullable) ?? []
+        return cards.map(card => ({
+          params: {
+            revisionKey,
+            literalID: card.literalID,
+          },
+          props: {
+            card,
+          },
+        }))
+      }),
+    )
+  ).flat()
+}
+
+const { revisionKey } = Astro.params
+const { card } = Astro.props
+const { pathname } = Astro.url
+const title = `[${card.printedID ?? card.literalID ?? '-'}] ${
+  card.nameJa ?? card.nameEn ?? 'NO NAME'
+}`
+const description = `アグリコラ（${revisionKey}）の ${title} に関するカード情報を掲載しています`
+
+const ogImage = {
+  path: `${revisionKey}/card/${card.literalID}/ogimage.png`,
+  alt: cardOgImageAltText(card),
+}
+---
+
+<Layout title={title} description={description} pathname={pathname} ogImage={ogImage}>
+  <Container>
+    <CardTitle card={card}>
+      <CardIDBadge card={card} />
+    </CardTitle>
+    <CardDescriptionList card={card} />
+    <Headline2>メタ情報</Headline2>
+    <CardMetaTable card={card} />
+    <CardReportErrorLink card={card} revisionKey={revisionKey} />
+  </Container>
+</Layout>

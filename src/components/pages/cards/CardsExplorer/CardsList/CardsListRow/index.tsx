@@ -12,7 +12,7 @@ type CardsListRowProps = Readonly<{
 const CardsListRow: FC<CardsListRowProps> = ({ card }) => (
   <ListGroupItem
     action
-    href={`/${card.revision.key}/card/${card.literalID}`}
+    href={`/${card.revision.key}/card/${card.literalID}/`}
     className={classNames('d-flex', 'justify-content-between')}
     active={false}
   >
