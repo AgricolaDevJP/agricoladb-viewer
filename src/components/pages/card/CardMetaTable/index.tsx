@@ -22,7 +22,7 @@ const CardMetaTable: FC<CardMetaTableProps> = ({ card }) => {
           <th scope="row">デッキ</th>
           <td>
             {isNonNullable(card.deck) ? (
-              <a href={`/${card.deck.revision.key}/cards?deckID=${card.deck.id}`}>
+              <a href={`/${card.deck.revision.key}/cards/?deckID=${card.deck.id}`}>
                 {card.deck.nameJa}
               </a>
             ) : (
@@ -36,7 +36,7 @@ const CardMetaTable: FC<CardMetaTableProps> = ({ card }) => {
             <ul className={styles.list}>
               {(card.products ?? []).map(product => (
                 <li key={product.id}>
-                  <a href={`/${product.revision.key}/cards?productID=${product.id}`}>
+                  <a href={`/${product.revision.key}/cards/?productID=${product.id}`}>
                     {product.nameJa}
                   </a>
                 </li>
@@ -69,14 +69,14 @@ const CardMetaTable: FC<CardMetaTableProps> = ({ card }) => {
               <ul className={styles.list}>
                 {(card.ancestors ?? []).map(ancestor => (
                   <li key={`${ancestor.revision.key}_${ancestor.literalID}`}>
-                    <a href={`/${ancestor.revision.key}/card/${ancestor.literalID}`}>
+                    <a href={`/${ancestor.revision.key}/card/${ancestor.literalID}/`}>
                       [{ancestor.printedID ?? ancestor.literalID}]{ancestor.nameJa ?? ''}
                     </a>
                   </li>
                 ))}
                 {(card.children ?? []).map(child => (
                   <li key={`${child.revision.key}_${child.literalID}`}>
-                    <a href={`/${child.revision.key}/card/${child.literalID}`}>
+                    <a href={`/${child.revision.key}/card/${child.literalID}/`}>
                       [{child.printedID ?? child.literalID}]{child.nameJa ?? ''}
                     </a>
                   </li>
