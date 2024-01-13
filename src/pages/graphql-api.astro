@@ -10,24 +10,25 @@ const { pathname } = Astro.url
 <Layout title="GraphQL API" pathname={pathname}>
   <Container>
     <Headline1>GraphQL API</Headline1>
-    <p>AgricolaDB は GraphQL 形式の API を提供しています。</p>
-    <p>※システム刷新に伴い、過去に提供していた REST API については提供終了させていただきました。</p>
+    <p>AgricolaDBはGraphQL形式のAPIを提供しています。</p>
+    <p>※システム刷新に伴い、過去に提供していたREST APIについては提供終了させていただきました。</p>
     <Headline2>API 利用方法</Headline2>
     <p>
-      <code>https://api.db.agricolajp.dev/query</code> エンドポイントに POST してください。
+      <code>https://api.db.agricolajp.dev/graphql</code> エンドポイントにPOSTしてください。以下にcurlコマンドによるリクエストの例を挙げます：
     </p>
-    <pre>
-      <code>&#123;&quot;query&quot;: &quot;::any_query::&quot;&#125;</code>
-    </pre>
+    <pre
+      class="pre-scrollable"><code>curl 'https://api.db.agricolajp.dev/graphql' \
+-H 'content-type: application/json' \
+--data-raw '&#123;"query":"&#123;\n  cards(where: &#123;revisionID: 1&#125;, first: 5) &#123;\n    edges &#123;\n      node &#123;\n        nameJa\n        printedID\n      &#125;\n    &#125;\n  &#125;\n&#125;"&#125;'</code></pre>
     <p>
       <a href="https://api.db.agricolajp.dev/">GraphQL Playground</a>{' '}
       を用意しているので、スキーマの確認や試験的なリクエスト送信にご利用ください。
     </p>
+
     <Headline2>API 利用規約</Headline2>
     <ol>
       <li>
-        本 API
-        を一般に公開する目的は以下に示す通りとしております。常識の範囲内でご利用いただき、目的外の利用はお控えください。
+        本APIを一般に公開する目的は以下に示す通りとしております。常識の範囲内でご利用いただき、目的外の利用はお控えください。
         <ul>
           <li>エラッタ情報の反映など、メンテナンスされたアグリコラの情報を共有するため</li>
           <li>拡張入りアグリコラの楽しさを広めるため</li>
@@ -36,22 +37,17 @@ const { pathname } = Astro.url
         </ul>
       </li>
       <li>
-        本 API で得られる情報は、Lookout Games・Z-man
-        Games・株式会社ホビージャパンなど、製品版を発売している企業の著作物を引用、もしくは Arthur
-        によって抄訳されたものとなります。本 API の商用利用はお控えください。
+        本APIで得られる情報は、Lookout Games・Z-man
+        Games・株式会社ホビージャパンなど、製品版を発売している企業の著作物を引用、もしくはArthurによって抄訳されたものとなります。本APIの商用利用はお控えください。
       </li>
       <li>
-        利用者が開発したアプリケーションに組み込むなど、本 API
-        に大量のリクエストを送信する場合には、あらかじめ Arthur
-        にご相談ください。相談なき場合、リクエストをブロックする可能性があります。
+        利用者が開発したアプリケーションに組み込むなど、本APIに大量のリクエストを送信する場合には、あらかじめArthurにご相談ください。相談なき場合、リクエストをブロックする可能性があります。
       </li>
       <li>
-        本 API
-        の利用に関連して利用者もしくは第三者に生じた損害について、その賠償の責任を一切負いかねます。
+        本APIの利用に関連して利用者もしくは第三者に生じた損害について、その賠償の責任を一切負いかねます。
       </li>
       <li>
-        本 API を安定して運用できるよう努力をいたしますが、100% の稼働を保証しません。本 API
-        は予告なくサービスを一時停止、終了することがございます。
+        本APIを安定して運用できるよう努力をいたしますが、100%の稼働を保証しません。本APIは予告なくサービスを一時停止、終了することがございます。
       </li>
     </ol>
   </Container>
