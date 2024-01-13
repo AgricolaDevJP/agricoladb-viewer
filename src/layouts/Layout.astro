@@ -18,7 +18,6 @@ type OGImage = Readonly<{
 }>
 
 const { title, pathname, ogImage } = Astro.props
-const headTitle = title === undefined ? 'AgricolaDB' : `${title} - AgricolaDB`
 const canonicalUrl = new URL(pathname, Astro.site).toString()
 const description =
   Astro.props.description ??
@@ -32,7 +31,7 @@ const ogImageAlt = ogImage?.alt ?? 'Agricola DB: Agricola Database for Japanese'
 <html lang="ja">
   <head>
     <SEO
-      title={headTitle}
+      title={title}
       titleTemplate="%s - AgricolaDB"
       titleDefault="AgricolaDB"
       description={description}
