@@ -11,7 +11,7 @@ import { revisionKeys } from '@/libs/domain/Revision'
 import { isNonNullable } from '@/libs/utils/types'
 
 export async function getStaticPaths() {
-  const client = new GraphQLClient('https://api.db.agricolajp.dev/graphql')
+  const client = new GraphQLClient('http://localhost:8000/graphql')
   const sdk = getSdk(client)
   return (
     await Promise.all(
