@@ -18,7 +18,7 @@
     "@astrojs/react": "^3.0.9",
     "@astrojs/sitemap": "^3.0.4",
     "@fontsource/noto-sans-jp": "^5.0.17",
-    "@graphql-codegen/cli": "5.0.0",
+    "@graphql-codegen/cli": "5.0.2",
     "@graphql-codegen/client-preset": "4.1.0",
     "@graphql-typed-document-node/core": "^3.2.0",
     "@popperjs/core": "^2.11.8",
