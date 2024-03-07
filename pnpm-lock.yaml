@@ -18,8 +18,8 @@ dependencies:
     specifier: ^3.0.4
     version: 3.0.4
   '@fontsource/noto-sans-jp':
-    specifier: ^5.0.17
-    version: 5.0.17
+    specifier: ^5.0.18
+    version: 5.0.18
   '@graphql-codegen/cli':
     specifier: 5.0.2
     version: 5.0.2(graphql@16.8.1)(typescript@5.3.3)
@@ -1181,8 +1181,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@fontsource/noto-sans-jp@5.0.17:
-    resolution: {integrity: sha512-dwgMf7lIkCeK8JtjpzQk8HW0Hh6ACiRTiVnKXS2+8mk5wngd9mQ63B9IgCaKkmjGmmLxVQp76gFiKUzDMP+uxw==}
+  /@fontsource/noto-sans-jp@5.0.18:
+    resolution: {integrity: sha512-tIXpfwpwxxn/Gl60fj2w4R7JK1ZQnE2onyY6saEvAdG42MzgvVZ3xsCUIlyhRtkTCB0qukfSj+eZ8tyS7Yxkuw==}
     dev: false
 
   /@graphql-codegen/add@5.0.0(graphql@16.8.1):
