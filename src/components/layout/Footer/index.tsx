@@ -9,7 +9,7 @@ const Footer: FC = () => {
         <small>&copy; 2021-{format(date, 'yyyy')} Arthur, AgricolaDevJP</small>
       </div>
       <div className="text-center">
-        <small>Last Modified: {format(date, 'yyyy-MM-dd hh:mm:ss')}</small>
+        <small>Last Modified: {format(date, 'yyyy-MM-dd HH:mm:ss')}</small>
       </div>
     </div>
   )
