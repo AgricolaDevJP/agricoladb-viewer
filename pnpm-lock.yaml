@@ -43,7 +43,7 @@ dependencies:
     version: 18.2.19
   astro:
     specifier: ^4.1.3
-    version: 4.1.3(sass@1.71.0)(typescript@5.3.3)
+    version: 4.1.3(sass@1.72.0)(typescript@5.3.3)
   astro-purgecss:
     specifier: ^4.1.0
     version: 4.1.0(astro@4.1.3)(purgecss@5.0.0)
@@ -137,8 +137,8 @@ devDependencies:
     specifier: ^0.4.1
     version: 0.4.1(prettier-plugin-astro@0.13.0)(prettier@3.2.4)
   sass:
-    specifier: ^1.71.0
-    version: 1.71.0
+    specifier: ^1.72.0
+    version: 1.72.0
 
 packages:
 
@@ -2732,7 +2732,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.23.3(@babel/core@7.23.7)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.0
-      vite: 5.0.11(sass@1.71.0)
+      vite: 5.0.11(sass@1.72.0)
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -3079,7 +3079,7 @@ packages:
       astro: ^4.0.0
       purgecss: ^5.0.0
     dependencies:
-      astro: 4.1.3(sass@1.71.0)(typescript@5.3.3)
+      astro: 4.1.3(sass@1.72.0)(typescript@5.3.3)
       purgecss: 5.0.0
     dev: false
 
@@ -3087,7 +3087,7 @@ packages:
     resolution: {integrity: sha512-7gq6lhibCM8FuzZIJlbLLWP5EJ9KL2/4XqeFrAg9O6ZK2xMFxJ5ubKf+a0VJwwTu8W8Xr421CmpiXu6Hq7n/7Q==}
     dev: false
 
-  /astro@4.1.3(sass@1.71.0)(typescript@5.3.3):
+  /astro@4.1.3(sass@1.72.0)(typescript@5.3.3):
     resolution: {integrity: sha512-9i8l0mEnpAOAi9F3DMkHGaZ4q56TGtt71XaAxhPXAlhZrVR/6ruobCyYdYwL1Fo0ATpuGXdaod1I7FFxFMcQbw==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
@@ -3150,7 +3150,7 @@ packages:
       tsconfck: 3.0.1(typescript@5.3.3)
       unist-util-visit: 5.0.0
       vfile: 6.0.1
-      vite: 5.0.11(sass@1.71.0)
+      vite: 5.0.11(sass@1.72.0)
       vitefu: 0.2.5(vite@5.0.11)
       which-pm: 2.1.1
       yargs-parser: 21.1.1
@@ -7023,8 +7023,8 @@ packages:
     dependencies:
       suf-log: 2.5.3
 
-  /sass@1.71.0:
-    resolution: {integrity: sha512-HKKIKf49Vkxlrav3F/w6qRuPcmImGVbIXJ2I3Kg0VMA+3Bav+8yE9G5XmP5lMj6nl4OlqbPftGAscNaNu28b8w==}
+  /sass@1.72.0:
+    resolution: {integrity: sha512-Gpczt3WA56Ly0Mn8Sl21Vj94s1axi9hDIzDFn9Ph9x3C3p4nNyvsqJoQyVXKou6cBlfFWEgRW4rT8Tb4i3XnVA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -7933,7 +7933,7 @@ packages:
       vfile-message: 4.0.2
     dev: false
 
-  /vite@5.0.11(sass@1.71.0):
+  /vite@5.0.11(sass@1.72.0):
     resolution: {integrity: sha512-XBMnDjZcNAw/G1gEiskiM1v6yzM4GE5aMGvhWTlHAYYhxb7S3/V1s3m2LDHa8Vh6yIWYYB0iJwsEaS523c4oYA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -7964,7 +7964,7 @@ packages:
       esbuild: 0.19.11
       postcss: 8.4.33
       rollup: 4.9.3
-      sass: 1.71.0
+      sass: 1.72.0
     optionalDependencies:
       fsevents: 2.3.3
     dev: false
@@ -7977,7 +7977,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 5.0.11(sass@1.71.0)
+      vite: 5.0.11(sass@1.72.0)
     dev: false
 
   /volar-service-css@0.0.34(@volar/language-service@2.1.5):
