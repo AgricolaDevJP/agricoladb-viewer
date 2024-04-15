@@ -58,6 +58,6 @@
     "prettier": "^3.2.4",
     "prettier-plugin-astro": "^0.13.0",
     "prettier-plugin-astro-organize-imports": "^0.4.1",
-    "sass": "^1.71.0"
+    "sass": "^1.75.0"
   }
 }
