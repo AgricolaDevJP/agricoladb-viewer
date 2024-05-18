@@ -11,5 +11,5 @@ jobs:
 
   dispatch-deploy:
     needs: [test-node]
-    uses: ./.github/workflows/wf-test-node.yml
+    uses: ./.github/workflows/wf-dispatch-deploy.yml
     secrets: inherit
