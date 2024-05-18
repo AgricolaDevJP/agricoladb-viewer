@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@astrojs/check':
         specifier: ^0.7.0
-        version: 0.7.0(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.3.3)
+        version: 0.7.0(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.4.5)
       '@astrojs/partytown':
         specifier: ^2.1.0
         version: 2.1.0
@@ -25,7 +25,7 @@ importers:
         version: 5.0.19
       '@graphql-codegen/cli':
         specifier: 5.0.2
-        version: 5.0.2(@types/node@20.10.6)(graphql@16.8.1)(typescript@5.3.3)
+        version: 5.0.2(@types/node@20.10.6)(graphql@16.8.1)(typescript@5.4.5)
       '@graphql-codegen/client-preset':
         specifier: 4.2.6
         version: 4.2.6(graphql@16.8.1)
@@ -46,13 +46,13 @@ importers:
         version: 18.3.0
       astro:
         specifier: ^4.8.6
-        version: 4.8.6(@types/node@20.10.6)(sass@1.77.2)(typescript@5.3.3)
+        version: 4.8.6(@types/node@20.10.6)(sass@1.77.2)(typescript@5.4.5)
       astro-purgecss:
         specifier: ^4.1.1
-        version: 4.1.1(astro@4.8.6(@types/node@20.10.6)(sass@1.77.2)(typescript@5.3.3))(purgecss@6.0.0)
+        version: 4.1.1(astro@4.8.6(@types/node@20.10.6)(sass@1.77.2)(typescript@5.4.5))(purgecss@6.0.0)
       astro-seo:
         specifier: ^0.8.3
-        version: 0.8.3(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.3.3)
+        version: 0.8.3(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.4.5)
       bootstrap:
         specifier: ^5.3.3
         version: 5.3.3(@popperjs/core@2.11.8)
@@ -96,8 +96,8 @@ importers:
         specifier: ^0.33.4
         version: 0.33.4
       typescript:
-        specifier: ^5.3.3
-        version: 5.3.3
+        specifier: ^5.4.5
+        version: 5.4.5
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3.1.0
@@ -113,10 +113,10 @@ importers:
         version: 4.3.0(prettier@3.2.5)
       '@typescript-eslint/eslint-plugin':
         specifier: ^7.9.0
-        version: 7.9.0(@typescript-eslint/parser@7.9.0(eslint@8.57.0)(typescript@5.3.3))(eslint@8.57.0)(typescript@5.3.3)
+        version: 7.9.0(@typescript-eslint/parser@7.9.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5)
       '@typescript-eslint/parser':
         specifier: ^7.9.0
-        version: 7.9.0(eslint@8.57.0)(typescript@5.3.3)
+        version: 7.9.0(eslint@8.57.0)(typescript@5.4.5)
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
@@ -125,7 +125,7 @@ importers:
         version: 9.1.0(eslint@8.57.0)
       eslint-plugin-astro:
         specifier: ^1.2.0
-        version: 1.2.0(eslint@8.57.0)(typescript@5.3.3)
+        version: 1.2.0(eslint@8.57.0)(typescript@5.4.5)
       eslint-plugin-react:
         specifier: ^7.34.1
         version: 7.34.1(eslint@8.57.0)
@@ -4266,11 +4266,6 @@ packages:
   typescript-auto-import-cache@0.3.2:
     resolution: {integrity: sha512-+laqe5SFL1vN62FPOOJSUDTZxtgsoOXjneYOXIpx5rQ4UMiN89NAtJLpqLqyebv9fgQ/IMeeTX+mQyRnwvJzvg==}
 
-  typescript@5.3.3:
-    resolution: {integrity: sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==}
-    engines: {node: '>=14.17'}
-    hasBin: true
-
   typescript@5.4.5:
     resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
     engines: {node: '>=14.17'}
@@ -4758,25 +4753,25 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@astrojs/check@0.5.10(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.3.3)':
+  '@astrojs/check@0.5.10(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.4.5)':
     dependencies:
-      '@astrojs/language-server': 2.8.4(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.3.3)
+      '@astrojs/language-server': 2.8.4(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.4.5)
       chokidar: 3.5.3
       fast-glob: 3.3.2
       kleur: 4.1.5
-      typescript: 5.3.3
+      typescript: 5.4.5
       yargs: 17.7.2
     transitivePeerDependencies:
       - prettier
       - prettier-plugin-astro
 
-  '@astrojs/check@0.7.0(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.3.3)':
+  '@astrojs/check@0.7.0(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.4.5)':
     dependencies:
-      '@astrojs/language-server': 2.10.0(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.3.3)
+      '@astrojs/language-server': 2.10.0(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.4.5)
       chokidar: 3.6.0
       fast-glob: 3.3.2
       kleur: 4.1.5
-      typescript: 5.3.3
+      typescript: 5.4.5
       yargs: 17.7.2
     transitivePeerDependencies:
       - prettier
@@ -4788,11 +4783,11 @@ snapshots:
 
   '@astrojs/internal-helpers@0.4.0': {}
 
-  '@astrojs/language-server@2.10.0(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.3.3)':
+  '@astrojs/language-server@2.10.0(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.4.5)':
     dependencies:
       '@astrojs/compiler': 2.8.0
       '@jridgewell/sourcemap-codec': 1.4.15
-      '@volar/kit': 2.2.4(typescript@5.3.3)
+      '@volar/kit': 2.2.4(typescript@5.4.5)
       '@volar/language-core': 2.2.4
       '@volar/language-server': 2.2.4
       '@volar/language-service': 2.2.4
@@ -4812,11 +4807,11 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@astrojs/language-server@2.8.4(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.3.3)':
+  '@astrojs/language-server@2.8.4(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.4.5)':
     dependencies:
       '@astrojs/compiler': 2.8.0
       '@jridgewell/sourcemap-codec': 1.4.15
-      '@volar/kit': 2.1.5(typescript@5.3.3)
+      '@volar/kit': 2.1.5(typescript@5.4.5)
       '@volar/language-core': 2.1.5
       '@volar/language-server': 2.1.5
       '@volar/language-service': 2.1.5
@@ -5578,7 +5573,7 @@ snapshots:
       graphql: 16.8.1
       tslib: 2.6.2
 
-  '@graphql-codegen/cli@5.0.2(@types/node@20.10.6)(graphql@16.8.1)(typescript@5.3.3)':
+  '@graphql-codegen/cli@5.0.2(@types/node@20.10.6)(graphql@16.8.1)(typescript@5.4.5)':
     dependencies:
       '@babel/generator': 7.23.6
       '@babel/template': 7.22.15
@@ -5598,11 +5593,11 @@ snapshots:
       '@graphql-tools/utils': 10.0.12(graphql@16.8.1)
       '@whatwg-node/fetch': 0.8.8
       chalk: 4.1.2
-      cosmiconfig: 8.3.6(typescript@5.3.3)
+      cosmiconfig: 8.3.6(typescript@5.4.5)
       debounce: 1.2.1
       detect-indent: 6.1.0
       graphql: 16.8.1
-      graphql-config: 5.0.3(@types/node@20.10.6)(graphql@16.8.1)(typescript@5.3.3)
+      graphql-config: 5.0.3(@types/node@20.10.6)(graphql@16.8.1)(typescript@5.4.5)
       inquirer: 8.2.6
       is-glob: 4.0.3
       jiti: 1.21.0
@@ -6441,34 +6436,34 @@ snapshots:
     dependencies:
       '@types/node': 20.10.6
 
-  '@typescript-eslint/eslint-plugin@7.9.0(@typescript-eslint/parser@7.9.0(eslint@8.57.0)(typescript@5.3.3))(eslint@8.57.0)(typescript@5.3.3)':
+  '@typescript-eslint/eslint-plugin@7.9.0(@typescript-eslint/parser@7.9.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5)':
     dependencies:
       '@eslint-community/regexpp': 4.10.0
-      '@typescript-eslint/parser': 7.9.0(eslint@8.57.0)(typescript@5.3.3)
+      '@typescript-eslint/parser': 7.9.0(eslint@8.57.0)(typescript@5.4.5)
       '@typescript-eslint/scope-manager': 7.9.0
-      '@typescript-eslint/type-utils': 7.9.0(eslint@8.57.0)(typescript@5.3.3)
-      '@typescript-eslint/utils': 7.9.0(eslint@8.57.0)(typescript@5.3.3)
+      '@typescript-eslint/type-utils': 7.9.0(eslint@8.57.0)(typescript@5.4.5)
+      '@typescript-eslint/utils': 7.9.0(eslint@8.57.0)(typescript@5.4.5)
       '@typescript-eslint/visitor-keys': 7.9.0
       eslint: 8.57.0
       graphemer: 1.4.0
       ignore: 5.3.1
       natural-compare: 1.4.0
-      ts-api-utils: 1.3.0(typescript@5.3.3)
+      ts-api-utils: 1.3.0(typescript@5.4.5)
     optionalDependencies:
-      typescript: 5.3.3
+      typescript: 5.4.5
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/parser@7.9.0(eslint@8.57.0)(typescript@5.3.3)':
+  '@typescript-eslint/parser@7.9.0(eslint@8.57.0)(typescript@5.4.5)':
     dependencies:
       '@typescript-eslint/scope-manager': 7.9.0
       '@typescript-eslint/types': 7.9.0
-      '@typescript-eslint/typescript-estree': 7.9.0(typescript@5.3.3)
+      '@typescript-eslint/typescript-estree': 7.9.0(typescript@5.4.5)
       '@typescript-eslint/visitor-keys': 7.9.0
       debug: 4.3.4
       eslint: 8.57.0
     optionalDependencies:
-      typescript: 5.3.3
+      typescript: 5.4.5
     transitivePeerDependencies:
       - supports-color
 
@@ -6477,21 +6472,21 @@ snapshots:
       '@typescript-eslint/types': 7.9.0
       '@typescript-eslint/visitor-keys': 7.9.0
 
-  '@typescript-eslint/type-utils@7.9.0(eslint@8.57.0)(typescript@5.3.3)':
+  '@typescript-eslint/type-utils@7.9.0(eslint@8.57.0)(typescript@5.4.5)':
     dependencies:
-      '@typescript-eslint/typescript-estree': 7.9.0(typescript@5.3.3)
-      '@typescript-eslint/utils': 7.9.0(eslint@8.57.0)(typescript@5.3.3)
+      '@typescript-eslint/typescript-estree': 7.9.0(typescript@5.4.5)
+      '@typescript-eslint/utils': 7.9.0(eslint@8.57.0)(typescript@5.4.5)
       debug: 4.3.4
       eslint: 8.57.0
-      ts-api-utils: 1.3.0(typescript@5.3.3)
+      ts-api-utils: 1.3.0(typescript@5.4.5)
     optionalDependencies:
-      typescript: 5.3.3
+      typescript: 5.4.5
     transitivePeerDependencies:
       - supports-color
 
   '@typescript-eslint/types@7.9.0': {}
 
-  '@typescript-eslint/typescript-estree@7.9.0(typescript@5.3.3)':
+  '@typescript-eslint/typescript-estree@7.9.0(typescript@5.4.5)':
     dependencies:
       '@typescript-eslint/types': 7.9.0
       '@typescript-eslint/visitor-keys': 7.9.0
@@ -6500,18 +6495,18 @@ snapshots:
       is-glob: 4.0.3
       minimatch: 9.0.4
       semver: 7.6.2
-      ts-api-utils: 1.3.0(typescript@5.3.3)
+      ts-api-utils: 1.3.0(typescript@5.4.5)
     optionalDependencies:
-      typescript: 5.3.3
+      typescript: 5.4.5
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/utils@7.9.0(eslint@8.57.0)(typescript@5.3.3)':
+  '@typescript-eslint/utils@7.9.0(eslint@8.57.0)(typescript@5.4.5)':
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.57.0)
       '@typescript-eslint/scope-manager': 7.9.0
       '@typescript-eslint/types': 7.9.0
-      '@typescript-eslint/typescript-estree': 7.9.0(typescript@5.3.3)
+      '@typescript-eslint/typescript-estree': 7.9.0(typescript@5.4.5)
       eslint: 8.57.0
     transitivePeerDependencies:
       - supports-color
@@ -6535,21 +6530,21 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@volar/kit@2.1.5(typescript@5.3.3)':
+  '@volar/kit@2.1.5(typescript@5.4.5)':
     dependencies:
       '@volar/language-service': 2.1.5
       '@volar/typescript': 2.1.5
       typesafe-path: 0.2.2
-      typescript: 5.3.3
+      typescript: 5.4.5
       vscode-languageserver-textdocument: 1.0.11
       vscode-uri: 3.0.8
 
-  '@volar/kit@2.2.4(typescript@5.3.3)':
+  '@volar/kit@2.2.4(typescript@5.4.5)':
     dependencies:
       '@volar/language-service': 2.2.4
       '@volar/typescript': 2.2.4
       typesafe-path: 0.2.2
-      typescript: 5.3.3
+      typescript: 5.4.5
       vscode-languageserver-textdocument: 1.0.11
       vscode-uri: 3.0.8
 
@@ -6830,12 +6825,12 @@ snapshots:
 
   astral-regex@2.0.0: {}
 
-  astro-eslint-parser@1.0.2(typescript@5.3.3):
+  astro-eslint-parser@1.0.2(typescript@5.4.5):
     dependencies:
       '@astrojs/compiler': 2.8.0
       '@typescript-eslint/scope-manager': 7.9.0
       '@typescript-eslint/types': 7.9.0
-      '@typescript-eslint/typescript-estree': 7.9.0(typescript@5.3.3)
+      '@typescript-eslint/typescript-estree': 7.9.0(typescript@5.4.5)
       astrojs-compiler-sync: 1.0.0(@astrojs/compiler@2.8.0)
       debug: 4.3.4
       entities: 4.5.0
@@ -6849,20 +6844,20 @@ snapshots:
       - supports-color
       - typescript
 
-  astro-purgecss@4.1.1(astro@4.8.6(@types/node@20.10.6)(sass@1.77.2)(typescript@5.3.3))(purgecss@6.0.0):
+  astro-purgecss@4.1.1(astro@4.8.6(@types/node@20.10.6)(sass@1.77.2)(typescript@5.4.5))(purgecss@6.0.0):
     dependencies:
-      astro: 4.8.6(@types/node@20.10.6)(sass@1.77.2)(typescript@5.3.3)
+      astro: 4.8.6(@types/node@20.10.6)(sass@1.77.2)(typescript@5.4.5)
       purgecss: 6.0.0
 
-  astro-seo@0.8.3(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.3.3):
+  astro-seo@0.8.3(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.4.5):
     dependencies:
-      '@astrojs/check': 0.5.10(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.3.3)
+      '@astrojs/check': 0.5.10(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.4.5)
     transitivePeerDependencies:
       - prettier
       - prettier-plugin-astro
       - typescript
 
-  astro@4.8.6(@types/node@20.10.6)(sass@1.77.2)(typescript@5.3.3):
+  astro@4.8.6(@types/node@20.10.6)(sass@1.77.2)(typescript@5.4.5):
     dependencies:
       '@astrojs/compiler': 2.8.0
       '@astrojs/internal-helpers': 0.4.0
@@ -6918,7 +6913,7 @@ snapshots:
       shiki: 1.5.1
       string-width: 7.1.0
       strip-ansi: 7.1.0
-      tsconfck: 3.0.3(typescript@5.3.3)
+      tsconfck: 3.0.3(typescript@5.4.5)
       unist-util-visit: 5.0.0
       vfile: 6.0.1
       vite: 5.2.11(@types/node@20.10.6)(sass@1.77.2)
@@ -7264,14 +7259,14 @@ snapshots:
 
   cookie@0.6.0: {}
 
-  cosmiconfig@8.3.6(typescript@5.3.3):
+  cosmiconfig@8.3.6(typescript@5.4.5):
     dependencies:
       import-fresh: 3.3.0
       js-yaml: 4.1.0
       parse-json: 5.2.0
       path-type: 4.0.0
     optionalDependencies:
-      typescript: 5.3.3
+      typescript: 5.4.5
 
   cross-fetch@3.1.8:
     dependencies:
@@ -7645,12 +7640,12 @@ snapshots:
     dependencies:
       eslint: 8.57.0
 
-  eslint-plugin-astro@1.2.0(eslint@8.57.0)(typescript@5.3.3):
+  eslint-plugin-astro@1.2.0(eslint@8.57.0)(typescript@5.4.5):
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.57.0)
       '@jridgewell/sourcemap-codec': 1.4.15
       '@typescript-eslint/types': 7.9.0
-      astro-eslint-parser: 1.0.2(typescript@5.3.3)
+      astro-eslint-parser: 1.0.2(typescript@5.4.5)
       eslint: 8.57.0
       eslint-compat-utils: 0.5.0(eslint@8.57.0)
       globals: 15.2.0
@@ -7999,7 +7994,7 @@ snapshots:
 
   graphemer@1.4.0: {}
 
-  graphql-config@5.0.3(@types/node@20.10.6)(graphql@16.8.1)(typescript@5.3.3):
+  graphql-config@5.0.3(@types/node@20.10.6)(graphql@16.8.1)(typescript@5.4.5):
     dependencies:
       '@graphql-tools/graphql-file-loader': 8.0.0(graphql@16.8.1)
       '@graphql-tools/json-file-loader': 8.0.0(graphql@16.8.1)
@@ -8007,7 +8002,7 @@ snapshots:
       '@graphql-tools/merge': 9.0.1(graphql@16.8.1)
       '@graphql-tools/url-loader': 8.0.1(@types/node@20.10.6)(graphql@16.8.1)
       '@graphql-tools/utils': 10.0.12(graphql@16.8.1)
-      cosmiconfig: 8.3.6(typescript@5.3.3)
+      cosmiconfig: 8.3.6(typescript@5.4.5)
       graphql: 16.8.1
       jiti: 1.21.0
       minimatch: 4.2.3
@@ -9887,15 +9882,15 @@ snapshots:
 
   trough@2.1.0: {}
 
-  ts-api-utils@1.3.0(typescript@5.3.3):
+  ts-api-utils@1.3.0(typescript@5.4.5):
     dependencies:
-      typescript: 5.3.3
+      typescript: 5.4.5
 
   ts-log@2.2.5: {}
 
-  tsconfck@3.0.3(typescript@5.3.3):
+  tsconfck@3.0.3(typescript@5.4.5):
     optionalDependencies:
-      typescript: 5.3.3
+      typescript: 5.4.5
 
   tslib@2.4.1: {}
 
@@ -9975,8 +9970,6 @@ snapshots:
   typescript-auto-import-cache@0.3.2:
     dependencies:
       semver: 7.6.2
-
-  typescript@5.3.3: {}
 
   typescript@5.4.5: {}
 
