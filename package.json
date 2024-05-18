@@ -19,7 +19,7 @@
     "@astrojs/sitemap": "^3.1.4",
     "@fontsource/noto-sans-jp": "^5.0.19",
     "@graphql-codegen/cli": "5.0.2",
-    "@graphql-codegen/client-preset": "4.2.4",
+    "@graphql-codegen/client-preset": "4.2.6",
     "@graphql-typed-document-node/core": "^3.2.0",
     "@popperjs/core": "^2.11.8",
     "@types/bootstrap": "^5.2.10",
@@ -47,7 +47,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.0.2",
     "@eslint/js": "^8.56.0",
-    "@graphql-codegen/typescript-graphql-request": "^6.1.0",
+    "@graphql-codegen/typescript-graphql-request": "^6.2.0",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.9.0",
