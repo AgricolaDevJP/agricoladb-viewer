@@ -45,8 +45,8 @@ dependencies:
     specifier: ^4.8.3
     version: 4.8.3(sass@1.71.0)(typescript@5.3.3)
   astro-purgecss:
-    specifier: ^4.1.0
-    version: 4.1.0(astro@4.8.3)(purgecss@5.0.0)
+    specifier: ^4.1.1
+    version: 4.1.1(astro@4.8.3)(purgecss@5.0.0)
   astro-seo:
     specifier: ^0.8.0
     version: 0.8.0
@@ -3705,11 +3705,11 @@ packages:
       - supports-color
     dev: true
 
-  /astro-purgecss@4.1.0(astro@4.8.3)(purgecss@5.0.0):
-    resolution: {integrity: sha512-CVxAXVuKYJZS2lbFEJJ9lKCnUx0FSd9+5muZTLdhXBWHiNpx1PKmR9WNJykP4ArCdpDPjkWSudyYUqMDAAA43w==}
+  /astro-purgecss@4.1.1(astro@4.8.3)(purgecss@5.0.0):
+    resolution: {integrity: sha512-Lrtd+8iwznjQUBW1aqgdEYyc5xSgRa+Ir97EMsX17WvI6aVXGLoEWsVxQD9qtcGfLU5Qoq1hQOUKzVbCJSHcAg==}
     peerDependencies:
       astro: ^4.0.0
-      purgecss: ^5.0.0
+      purgecss: ^6.0.0
     dependencies:
       astro: 4.8.3(sass@1.71.0)(typescript@5.3.3)
       purgecss: 5.0.0
