@@ -48,8 +48,8 @@ dependencies:
     specifier: ^4.1.1
     version: 4.1.1(astro@4.8.6)(purgecss@5.0.0)
   astro-seo:
-    specifier: ^0.8.0
-    version: 0.8.0
+    specifier: ^0.8.3
+    version: 0.8.3(prettier-plugin-astro@0.13.0)(prettier@3.2.4)(typescript@5.3.3)
   bootstrap:
     specifier: ^5.3.3
     version: 5.3.3(@popperjs/core@2.11.8)
@@ -3715,8 +3715,14 @@ packages:
       purgecss: 5.0.0
     dev: false
 
-  /astro-seo@0.8.0:
-    resolution: {integrity: sha512-7gq6lhibCM8FuzZIJlbLLWP5EJ9KL2/4XqeFrAg9O6ZK2xMFxJ5ubKf+a0VJwwTu8W8Xr421CmpiXu6Hq7n/7Q==}
+  /astro-seo@0.8.3(prettier-plugin-astro@0.13.0)(prettier@3.2.4)(typescript@5.3.3):
+    resolution: {integrity: sha512-gQeEh0U2yyVM0iyU8DTORK6hXMy5WH2wufrkUuNOKjI3LnYLniqgDxm1LZPQDuD6b4OHabVOi/5L88A9POCcCQ==}
+    dependencies:
+      '@astrojs/check': 0.5.10(prettier-plugin-astro@0.13.0)(prettier@3.2.4)(typescript@5.3.3)
+    transitivePeerDependencies:
+      - prettier
+      - prettier-plugin-astro
+      - typescript
     dev: false
 
   /astro@4.8.6(sass@1.71.0)(typescript@5.3.3):
