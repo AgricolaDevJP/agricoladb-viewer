@@ -1,5 +1,5 @@
 import { GraphQLClient } from 'graphql-request'
-import { type FC, useCallback, useEffect, useState } from 'react'
+import { type FC, useEffect, useState } from 'react'
 
 import { getSdk } from '@/libs/api/generated'
 import { paramsToSearchCondition, searchConditionToWhere } from '@/libs/cards/search'
