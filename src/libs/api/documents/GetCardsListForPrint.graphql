@@ -1,0 +1,24 @@
+query GetCardsListForPrint($where: CardWhereInput!) {
+  cards(where: $where) {
+    edges {
+      node {
+        literalID
+        printedID
+        cardType {
+          key
+        }
+        revision {
+          id
+          key
+        }
+        nameJa
+        nameEn
+        minPlayersNumber
+        prerequisite
+        cost
+        description
+      }
+    }
+    totalCount
+  }
+}

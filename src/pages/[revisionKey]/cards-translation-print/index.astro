@@ -1,0 +1,18 @@
+---
+import CardsTranslationPrintList from '@/components/pages/cards-translation-print/CardsTranslationPrintList'
+import PrintLayout from '@/layouts/PrintLayout.astro'
+import { revisionKeys } from '@/libs/domain/Revision'
+
+export async function getStaticPaths() {
+  return revisionKeys.map(revisionKey => ({
+    params: { revisionKey },
+  }))
+}
+
+const { revisionKey } = Astro.params
+const { pathname } = Astro.url
+---
+
+<PrintLayout title={`カード翻訳シート印刷（${revisionKey}）`} pathname={pathname}>
+  <CardsTranslationPrintList client:only revisionKey={revisionKey} />
+</PrintLayout>

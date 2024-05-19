@@ -1,5 +1,4 @@
-import type { GraphQLClient } from 'graphql-request';
-import type { GraphQLClientRequestHeaders } from 'graphql-request/build/cjs/types';
+import type { GraphQLClient, RequestOptions } from 'graphql-request';
 import gql from 'graphql-tag';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
@@ -8,6 +7,7 @@ export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: 
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
 export type MakeEmpty<T extends { [key: string]: unknown }, K extends keyof T> = { [_ in K]?: never };
 export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
+type GraphQLClientRequestHeaders = RequestOptions['requestHeaders'];
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: { input: string; output: string; }
@@ -926,6 +926,13 @@ export type GetCardsListQueryVariables = Exact<{
 
 export type GetCardsListQuery = { __typename?: 'Query', cards: { __typename?: 'CardConnection', totalCount: number, edges?: Array<{ __typename?: 'CardEdge', node?: { __typename?: 'Card', literalID: string, printedID?: string | null, nameJa?: string | null, nameEn?: string | null, cardType: { __typename?: 'CardType', key: string }, cardSpecialColor?: { __typename?: 'CardSpecialColor', key: string } | null, revision: { __typename?: 'Revision', id: string, key: string } } | null } | null> | null, pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, hasPreviousPage: boolean, endCursor?: any | null } } };
 
+export type GetCardsListForPrintQueryVariables = Exact<{
+  where: CardWhereInput;
+}>;
+
+
+export type GetCardsListForPrintQuery = { __typename?: 'Query', cards: { __typename?: 'CardConnection', totalCount: number, edges?: Array<{ __typename?: 'CardEdge', node?: { __typename?: 'Card', literalID: string, printedID?: string | null, nameJa?: string | null, nameEn?: string | null, minPlayersNumber?: number | null, prerequisite?: string | null, cost?: string | null, description?: string | null, cardType: { __typename?: 'CardType', key: string }, revision: { __typename?: 'Revision', id: string, key: string } } | null } | null> | null } };
+
 export type GetDecksAndProductsListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -1042,6 +1049,32 @@ export const GetCardsListDocument = gql`
   }
 }
     `;
+export const GetCardsListForPrintDocument = gql`
+    query GetCardsListForPrint($where: CardWhereInput!) {
+  cards(where: $where) {
+    edges {
+      node {
+        literalID
+        printedID
+        cardType {
+          key
+        }
+        revision {
+          id
+          key
+        }
+        nameJa
+        nameEn
+        minPlayersNumber
+        prerequisite
+        cost
+        description
+      }
+    }
+    totalCount
+  }
+}
+    `;
 export const GetDecksAndProductsListDocument = gql`
     query GetDecksAndProductsList {
   decks {
@@ -1064,7 +1097,7 @@ export const GetDecksAndProductsListDocument = gql`
 export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string, operationType?: string, variables?: any) => Promise<T>;
 
 
-const defaultWrapper: SdkFunctionWrapper = (action, _operationName, _operationType, variables) => action();
+const defaultWrapper: SdkFunctionWrapper = (action, _operationName, _operationType, _variables) => action();
 
 export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = defaultWrapper) {
   return {
@@ -1073,6 +1106,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     GetCardsList(variables: GetCardsListQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<GetCardsListQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetCardsListQuery>(GetCardsListDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'GetCardsList', 'query', variables);
+    },
+    GetCardsListForPrint(variables: GetCardsListForPrintQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<GetCardsListForPrintQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetCardsListForPrintQuery>(GetCardsListForPrintDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'GetCardsListForPrint', 'query', variables);
     },
     GetDecksAndProductsList(variables?: GetDecksAndProductsListQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<GetDecksAndProductsListQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetDecksAndProductsListQuery>(GetDecksAndProductsListDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'GetDecksAndProductsList', 'query', variables);

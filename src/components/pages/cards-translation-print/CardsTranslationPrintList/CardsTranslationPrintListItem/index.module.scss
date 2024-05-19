@@ -1,0 +1,24 @@
+.CardsTableCell {
+  box-sizing: border-box;
+  width: 55mm;
+  height: 40mm;
+  border: .5mm solid gray;
+  border-collapse: collapse;
+  text-align: left;
+  vertical-align: top;
+  font-family: 'Noto Sans JP';
+  font-size: 3.3mm;
+  overflow: hidden;
+}
+
+.CardsTableCellLongText {
+  font-size: 2.8mm;
+}
+
+.CardsTableCellLongLongText {
+  font-size: 2.5mm;
+}
+
+.CardTitle {
+  font-weight: bold;
+}
