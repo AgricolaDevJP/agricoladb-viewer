@@ -17,6 +17,8 @@ export default defineConfig({
     purgecss({
       safelist: [
         'btn-info',
+        'btn-light',
+        'btn-sm',
         'row',
         'col-md-4',
         'col-md-8',
