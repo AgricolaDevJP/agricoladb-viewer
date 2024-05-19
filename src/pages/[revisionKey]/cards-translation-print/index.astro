@@ -14,5 +14,5 @@ const { pathname } = Astro.url
 ---
 
 <PrintLayout title={`カード翻訳シート印刷（${revisionKey}）`} pathname={pathname}>
-  <CardsTranslationPrintList client:only revisionKey={revisionKey} />
+  <CardsTranslationPrintList client:only="react" revisionKey={revisionKey} />
 </PrintLayout>
