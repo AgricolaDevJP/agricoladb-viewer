@@ -1,0 +1,10 @@
+.CardsTable {
+  width: 100%;
+  border: .5mm gray solid;
+  border-collapse: collapse;
+}
+
+.CardsTableRow {
+  break-inside: avoid-page;
+  border-collapse: collapse;
+}

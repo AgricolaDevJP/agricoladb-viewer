@@ -1,89 +1,22 @@
 import classNames from 'classnames'
 import { GraphQLClient } from 'graphql-request'
 import { type FC, useCallback, useEffect, useRef, useState } from 'react'
-import { Col, Row, Spinner } from 'react-bootstrap'
+import { Button, Col, Row, Spinner } from 'react-bootstrap'
+import { FaPrint, FaRegCircleCheck } from 'react-icons/fa6'
 
 import Headline2 from '@/components/common/Headline2'
-import {
-  type CardTypeWhereInput,
-  type CardWhereInput,
-  type PageInfo,
-  getSdk,
-} from '@/libs/api/generated'
+import { type PageInfo, getSdk } from '@/libs/api/generated'
+import { paramsToSearchCondition, searchConditionToWhere } from '@/libs/cards/search'
 import type { CardSummary } from '@/libs/domain/Card'
+import type { CardsSearchCondition } from '@/libs/domain/CardsSearchCondition'
 import type { DeckSummary } from '@/libs/domain/Deck'
 import type { ProductSummary } from '@/libs/domain/Product'
 import type { RevisionKey } from '@/libs/domain/Revision'
-import { isNonNullable, unreachable } from '@/libs/utils/types'
+import { isNonNullable } from '@/libs/utils/types'
 
 import CardsList from './CardsList'
 import CardsSearchForm from './CardsSearchForm'
 import styles from './index.module.scss'
-
-const cardTypeConditions = ['occupation', 'minor_improvement', 'major_improvement', 'misc'] as const
-export type CardTypeCondition = (typeof cardTypeConditions)[number]
-
-export type CardsSearchCondition = Readonly<{
-  productID: string | undefined
-  deckID: string | undefined
-  cardType: CardTypeCondition | undefined
-  nameJa: string | undefined
-  nameEn: string | undefined
-  description: string | undefined
-}>
-
-const paramsToSearchCondition = (params: URLSearchParams): CardsSearchCondition => {
-  const productID = params.get('productID')
-  const deckID = params.get('deckID')
-  const cardType = params.get('cardType')
-  const nameJa = params.get('nameJa')
-  const nameEn = params.get('nameEn')
-  const description = params.get('description')
-  const isCardType = (cardType: string): cardType is CardTypeCondition =>
-    cardTypeConditions.some(c => c === cardType)
-  return {
-    productID: productID !== null ? productID : undefined,
-    deckID: deckID !== null ? deckID : undefined,
-    cardType: cardType !== null && isCardType(cardType) ? cardType : undefined,
-    nameJa: nameJa !== null ? nameJa : undefined,
-    nameEn: nameEn !== null ? nameEn : undefined,
-    description: description !== null ? description : undefined,
-  }
-}
-
-const searchConditionToWhere = (revisionKey: string, searchCondition: CardsSearchCondition) => {
-  let hasCardTypeWith: CardTypeWhereInput['hasCardsWith']
-  switch (searchCondition.cardType) {
-    case 'occupation':
-      hasCardTypeWith = [{ nameJa: '職業' }]
-      break
-    case 'minor_improvement':
-      hasCardTypeWith = [{ nameJa: '小さい進歩' }]
-      break
-    case 'major_improvement':
-      hasCardTypeWith = [{ nameJa: '大きい進歩' }]
-      break
-    case 'misc':
-      hasCardTypeWith = [{ nameJaNotIn: ['職業', '小さい進歩', '大きい進歩'] }]
-      break
-    case undefined:
-      break
-    default:
-      unreachable(searchCondition.cardType)
-  }
-  const where: CardWhereInput = {
-    hasRevisionWith: [{ key: revisionKey }],
-    hasProductsWith:
-      searchCondition.productID !== undefined ? [{ id: searchCondition.productID }] : undefined,
-    hasDeckWith:
-      searchCondition.deckID !== undefined ? [{ id: searchCondition.deckID }] : undefined,
-    hasCardTypeWith,
-    nameJaContains: searchCondition.nameJa,
-    nameEnContains: searchCondition.nameEn,
-    descriptionContains: searchCondition.description,
-  }
-  return where
-}
 
 type CardsExplorerProps = Readonly<{
   revisionKey: RevisionKey
@@ -101,7 +34,7 @@ const CardsExplorer: FC<CardsExplorerProps> = ({ revisionKey, decks, products })
   const hasMore = pageInfo === undefined || pageInfo.hasNextPage
 
   const params = new URLSearchParams(window.location.search)
-  const searchCondition: CardsSearchCondition = paramsToSearchCondition(params)
+  const searchCondition = paramsToSearchCondition(params)
   const where = searchConditionToWhere(revisionKey, searchCondition)
 
   const client = new GraphQLClient('https://api.db.agricolajp.dev/graphql')
@@ -150,6 +83,11 @@ const CardsExplorer: FC<CardsExplorerProps> = ({ revisionKey, decks, products })
     }
   }, [hasMore, spinnerRef, fetchMore])
 
+  let translationPrintPath = `/${revisionKey}/cards-translation-print/`
+  if (window.location.search) {
+    translationPrintPath += `${window.location.search}`
+  }
+
   return (
     <Row>
       <Col md={4}>
@@ -161,7 +99,16 @@ const CardsExplorer: FC<CardsExplorerProps> = ({ revisionKey, decks, products })
             onSubmit={onSubmitSearch}
             searchCondition={searchCondition}
           />
-          {totalCount !== undefined && <p className="mt-2">{totalCount}件ヒットしました</p>}
+          {totalCount !== undefined && (
+            <>
+              <p className="mt-2 text-success">
+                <FaRegCircleCheck /> {totalCount}件ヒットしました
+              </p>
+              <Button variant="light" size="sm" href={translationPrintPath}>
+                <FaPrint /> 翻訳シートとして印刷する
+              </Button>
+            </>
+          )}
         </div>
       </Col>
       <Col md={8}>

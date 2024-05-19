@@ -33,4 +33,9 @@ export const changeLogs: readonly ChangeLog[] = [
     timestamp: parseISO('2024-01-09'),
     description: 'AgricolaDB および AgricolaDB API をリニューアルしました',
   },
+  {
+    id: 5,
+    timestamp: parseISO('2024-05-19'),
+    description: 'カード一覧画面において翻訳シート印刷機能をリリースしました',
+  },
 ] as const

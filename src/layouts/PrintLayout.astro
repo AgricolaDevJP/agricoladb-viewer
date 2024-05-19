@@ -1,9 +1,7 @@
 ---
-import Footer from '@/components/layout/Footer'
-import Header from '@/components/layout/Header'
 import '@fontsource/noto-sans-jp/400.css'
 import { SEO } from 'astro-seo'
-import './app.scss'
+import './print.scss'
 
 interface Props {
   title?: string
@@ -80,14 +78,6 @@ const ogImageAlt = ogImage?.alt ?? 'Agricola DB: Agricola Database for Japanese'
     </script>
   </head>
   <body>
-    <div class="d-flex flex-column vh-100">
-      <header>
-        <Header client:load pathname={pathname} />
-      </header>
-      <main class="mt-5"><slot /></main>
-      <footer class="footer mt-auto">
-        <Footer />
-      </footer>
-    </div>
+    <div class="main"><slot /></div>
   </body>
 </html>
