@@ -12,7 +12,7 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0(prettier-plugin-astro@0.14.0)(prettier@3.3.2)(typescript@5.5.2)
       '@astrojs/partytown':
-        specifier: ^2.1.1
+        specifier: ^2.1.2
         version: 2.1.1
       '@astrojs/react':
         specifier: ^3.6.0
