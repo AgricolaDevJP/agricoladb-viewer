@@ -1,0 +1,37 @@
+name: build
+
+on:
+  workflow_call:
+    inputs:
+      needs-release:
+        type: boolean
+        default: false
+
+env:
+  TZ: Asia/Tokyo
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    services:
+      server:
+        image: ghcr.io/agricoladevjp/agricoladb-server/server:latest
+        ports:
+          - 8000:8000
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: latest
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.node-version'
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - if: inputs.needs-release
+        run: tar -zcvf dist.tar.gz dist/
+      - if: inputs.needs-release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist.tar.gz

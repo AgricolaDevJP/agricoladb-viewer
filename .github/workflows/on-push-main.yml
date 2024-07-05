@@ -9,6 +9,9 @@ jobs:
   test-node:
     uses: ./.github/workflows/wf-test-node.yml
 
+  build:
+    uses: ./.github/workflows/wf-build.yml
+
   tagpr:
     runs-on: ubuntu-latest
     steps:
