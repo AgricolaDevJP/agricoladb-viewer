@@ -1,6 +1,6 @@
 {
   "name": "agricoladb-viewer",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
