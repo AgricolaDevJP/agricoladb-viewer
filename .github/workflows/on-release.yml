@@ -9,7 +9,13 @@ jobs:
   test-node:
     uses: ./.github/workflows/wf-test-node.yml
 
+  build:
+    uses: ./.github/workflows/wf-build.yml
+    with:
+      needs-release: true
+    secrets: inherit
+
   dispatch-deploy:
-    needs: [test-node]
+    needs: [build]
     uses: ./.github/workflows/wf-dispatch-deploy.yml
     secrets: inherit

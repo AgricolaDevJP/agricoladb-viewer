@@ -6,3 +6,6 @@ on:
 jobs:
   test-node:
     uses: ./.github/workflows/wf-test-node.yml
+
+  build:
+    uses: ./.github/workflows/wf-build.yml
