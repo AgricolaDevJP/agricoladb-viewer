@@ -1,5 +1,11 @@
 # Changelog
 
+## [v2.1.3](https://github.com/AgricolaDevJP/agricoladb-viewer/compare/v2.1.2...v2.1.3) - 2024-08-03
+- add dist archive to release by @Arthur1 in https://github.com/AgricolaDevJP/agricoladb-viewer/pull/140
+- Update dependency typescript to ^5.5.3 by @renovate in https://github.com/AgricolaDevJP/agricoladb-viewer/pull/142
+- Update dependency @astrojs/check to ^0.9.1 by @renovate in https://github.com/AgricolaDevJP/agricoladb-viewer/pull/143
+- Update dependency typescript to ^5.5.4 by @renovate in https://github.com/AgricolaDevJP/agricoladb-viewer/pull/148
+
 ## [v2.1.2](https://github.com/AgricolaDevJP/agricoladb-viewer/compare/v2.1.1...v2.1.2) - 2024-07-05
 - Update dependency @types/react to ^18.3.3 by @renovate in https://github.com/AgricolaDevJP/agricoladb-viewer/pull/114
 - Update dependency sass to ^1.77.4 by @renovate in https://github.com/AgricolaDevJP/agricoladb-viewer/pull/116
