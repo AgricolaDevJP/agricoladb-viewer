@@ -48,8 +48,8 @@ importers:
         specifier: ^4.11.5
         version: 4.11.5(@types/node@20.10.6)(sass@1.77.6)(typescript@5.5.4)
       astro-purgecss:
-        specifier: ^4.1.1
-        version: 4.1.1(astro@4.11.5(@types/node@20.10.6)(sass@1.77.6)(typescript@5.5.4))(purgecss@6.0.0)
+        specifier: ^4.6.1
+        version: 4.6.1(astro@4.11.5(@types/node@20.10.6)(sass@1.77.6)(typescript@5.5.4))(purgecss@6.0.0)
       astro-seo:
         specifier: ^0.8.4
         version: 0.8.4(prettier-plugin-astro@0.14.0)(prettier@3.3.2)(typescript@5.5.4)
@@ -1730,8 +1730,8 @@ packages:
     resolution: {integrity: sha512-8hJaCuqxObShWl2wEsnASqh/DbQ2O+S66m0Q3ctJlzBPEQ4pfGwwama3FCjZO3GDLQsjvn1T0v93Vxyu/+5fGw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  astro-purgecss@4.1.1:
-    resolution: {integrity: sha512-Lrtd+8iwznjQUBW1aqgdEYyc5xSgRa+Ir97EMsX17WvI6aVXGLoEWsVxQD9qtcGfLU5Qoq1hQOUKzVbCJSHcAg==}
+  astro-purgecss@4.6.1:
+    resolution: {integrity: sha512-SVxd2RY7FIVPcMYA6hD919dQySEVRND2wd2aKMx8uw8YSomix5EWtBwPMsXOrBlVQREPYn0WvuwzvXDrxpOmHQ==}
     peerDependencies:
       astro: ^4.0.0
       purgecss: ^6.0.0
@@ -6530,7 +6530,7 @@ snapshots:
       - supports-color
       - typescript
 
-  astro-purgecss@4.1.1(astro@4.11.5(@types/node@20.10.6)(sass@1.77.6)(typescript@5.5.4))(purgecss@6.0.0):
+  astro-purgecss@4.6.1(astro@4.11.5(@types/node@20.10.6)(sass@1.77.6)(typescript@5.5.4))(purgecss@6.0.0):
     dependencies:
       astro: 4.11.5(@types/node@20.10.6)(sass@1.77.6)(typescript@5.5.4)
       purgecss: 6.0.0
