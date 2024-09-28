@@ -26,7 +26,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "astro": "^4.11.5",
-    "astro-purgecss": "^4.1.1",
+    "astro-purgecss": "^4.6.1",
     "astro-seo": "^0.8.4",
     "bootstrap": "^5.3.3",
     "classnames": "^2.5.1",
