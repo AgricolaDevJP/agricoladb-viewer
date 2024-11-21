@@ -48,8 +48,8 @@ importers:
         specifier: ^4.11.5
         version: 4.11.5(@types/node@20.10.6)(sass@1.77.6)(typescript@5.5.4)
       astro-purgecss:
-        specifier: ^4.1.1
-        version: 4.1.1(astro@4.11.5(@types/node@20.10.6)(sass@1.77.6)(typescript@5.5.4))(purgecss@6.0.0)
+        specifier: ^4.9.0
+        version: 4.9.0(astro@4.11.5(@types/node@20.10.6)(sass@1.77.6)(typescript@5.5.4))(purgecss@6.0.0)
       astro-seo:
         specifier: ^0.8.4
         version: 0.8.4(prettier-plugin-astro@0.14.0)(prettier@3.3.2)(typescript@5.5.4)
@@ -1730,11 +1730,11 @@ packages:
     resolution: {integrity: sha512-8hJaCuqxObShWl2wEsnASqh/DbQ2O+S66m0Q3ctJlzBPEQ4pfGwwama3FCjZO3GDLQsjvn1T0v93Vxyu/+5fGw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  astro-purgecss@4.1.1:
-    resolution: {integrity: sha512-Lrtd+8iwznjQUBW1aqgdEYyc5xSgRa+Ir97EMsX17WvI6aVXGLoEWsVxQD9qtcGfLU5Qoq1hQOUKzVbCJSHcAg==}
+  astro-purgecss@4.9.0:
+    resolution: {integrity: sha512-Ymio3P4kVCPqTbP2x/wpuDn4C3J0/kNYXW77BrDAZcj42CXRwVuo+9atyH9CN4i1efqTIOLvsh3JGcaalRVhHQ==}
     peerDependencies:
       astro: ^4.0.0
-      purgecss: ^6.0.0
+      purgecss: ^7.0.0
 
   astro-seo@0.8.4:
     resolution: {integrity: sha512-Ou1vzQSXAxa0K8rtNtXNvSpYqOGEgMhh0immMxJeXmbVZac3UKCNWAoXWyOQDFYsZvBugCRSg0N1phBqPMVgCw==}
@@ -2280,6 +2280,7 @@ packages:
   eslint@8.57.0:
     resolution: {integrity: sha512-dZ6+mexnaTIbSBZWgou51U6OmzIhYM2VcNdtiTtI7qPNZm35Akpr0f6vtw3w1Kmn5PYo+tZVfh13WrhpS6oLqQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@10.0.1:
@@ -6530,7 +6531,7 @@ snapshots:
       - supports-color
       - typescript
 
-  astro-purgecss@4.1.1(astro@4.11.5(@types/node@20.10.6)(sass@1.77.6)(typescript@5.5.4))(purgecss@6.0.0):
+  astro-purgecss@4.9.0(astro@4.11.5(@types/node@20.10.6)(sass@1.77.6)(typescript@5.5.4))(purgecss@6.0.0):
     dependencies:
       astro: 4.11.5(@types/node@20.10.6)(sass@1.77.6)(typescript@5.5.4)
       purgecss: 6.0.0
